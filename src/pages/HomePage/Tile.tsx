@@ -26,8 +26,8 @@ export interface ITile extends ITileHeader, ITileMedia, ITileActions {
   Teaser: () => JSX.Element;
 }
 
-const TileHeader = ({ title }: ITileHeader) => (
-  <CardHeader title={title}></CardHeader>
+const TileHeader = ({ tile }: { tile: ITile }) => (
+  <CardHeader title={tile.title}></CardHeader>
 );
 
 const TileMedia = ({ img, alt }: ITileMedia) => (
@@ -41,13 +41,27 @@ const TileMedia = ({ img, alt }: ITileMedia) => (
   />
 );
 
+// const TileContent = ({ tile }: { tile: ITile }) => (
+//   <CardContent>
+//     <Paper elevation={3}>
+//       <tile.Teaser />
+//     </Paper>
+//   </CardContent>
+// );
+
+const TileContent = ({ tile }: { tile: ITile }) => (
+  <CardContent>
+    <tile.Teaser />
+  </CardContent>
+);
+
 const TileActions = ({ moreInfoUrl }: Required<ITileActions>) => {
   const navigate = useNavigate();
 
   return (
     <CardActions>
       <Button
-        variant="outlined"
+        variant="contained"
         size="small"
         onClick={() => navigate(moreInfoUrl)}
       >
@@ -59,19 +73,11 @@ const TileActions = ({ moreInfoUrl }: Required<ITileActions>) => {
 
 const Tile = ({ tile }: { tile: ITile }) => {
   return (
-    <Card sx={{ minWidth: 275 }}>
-      <TileHeader title={tile.title} />
+    <Card variant="outlined" sx={{ minWidth: 275 }}>
+      <TileHeader tile={tile} />
       <TileMedia img={tile.img} alt={tile.alt} />
-      <CardContent>
-        <Paper elevation={3}>
-          <tile.Teaser />
-        </Paper>
-      </CardContent>
-      {tile.moreInfoUrl ? (
-        <TileActions moreInfoUrl={tile.moreInfoUrl} />
-      ) : (
-        <></>
-      )}
+      <TileContent tile={tile} />
+      {tile.moreInfoUrl && <TileActions moreInfoUrl={tile.moreInfoUrl} />}
     </Card>
   );
 };

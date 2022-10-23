@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -30,11 +29,7 @@ const OwnCatTeaser = () => {
         Het houden van een kat is zeer belonend. Maar, zoals bij ieder
         intelligent dier, hebben katten ook hun wensen en grillen.
       </Typography>
-      <Box
-        sx={{ bgcolor: "background.paper" }}
-      >
         <List>{listItems}</List>
-      </Box>
     </>
   );
 };
