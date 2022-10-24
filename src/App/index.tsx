@@ -3,7 +3,6 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider, Theme2NavProvider } from "../contexts";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import Nav from "./Nav";
 import Main from "./Main";
 
 const Content = () => {
@@ -12,25 +11,30 @@ const Content = () => {
       sx={{
         minHeight: "100vh",
         width: "100vw",
-        bgcolor: "primary.main",
       }}
     >
-      <Stack direction="column" spacing={2}>
-        <Header />
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexGrow={1}
+      <Header />
+      <Box
+        sx={{
+          minHeight: "100vh",
+          width: "100vw",
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        <Sidebar />
+        <Container
+          maxWidth="lg"
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexGrow: 1,
+            mt: "20px",
+          }}
         >
-          <Container maxWidth="xl">
-            <Stack direction="row" spacing={2}>
-              <Sidebar />
-              <Main />
-            </Stack>
-          </Container>
-        </Box>
-      </Stack>
+          <Main />
+        </Container>
+      </Box>
     </Box>
   );
 };

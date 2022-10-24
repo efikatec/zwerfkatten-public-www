@@ -2,6 +2,7 @@ import { Routes, Route, RouteProps, Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import OwnCatPage from "../pages/OwnCatPage";
 import Error404Page from "../pages/Error404Page";
+import { Box } from "@mui/material";
 
 const routes: RouteProps[] = [
   {
@@ -25,11 +26,20 @@ const routes: RouteProps[] = [
 const Main = () => {
   return (
     <main>
-      <Routes>
-        {routes.map((one, index) => (
-          <Route key={index} path={one.path} element={one.element} />
-        ))}
-      </Routes>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexGrow: 1,
+        }}
+      >
+        <Routes>
+          {routes.map((one, index) => (
+            <Route key={index} path={one.path} element={one.element} />
+          ))}
+        </Routes>
+      </Box>
     </main>
   );
 };

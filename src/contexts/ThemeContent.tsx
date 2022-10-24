@@ -15,10 +15,7 @@ const lightTheme = (() => {
     return createTheme(t, {
       palette: {
         primary: {
-          main: "#ffeb3b",
-          light: "#ffef62",
-          dark: "#b2a429",
-          contrastText: "#222",
+          main: colors.lightBlue[500],
         },
       },
     });
@@ -27,10 +24,7 @@ const lightTheme = (() => {
     return createTheme(t, {
       palette: {
         secondary: {
-          main: "#ff9100",
-          light: "#ffa733",
-          dark: "#b26500",
-          contrastText: "#222",
+          main: colors.purple[500]
         },
       },
     });
@@ -78,15 +72,26 @@ const lightTheme = (() => {
 })();
 
 const darkTheme = (() => {
-  const sbBgColor = (t: Theme) => {
+  const background = (t: Theme) => {
     return createTheme(t, {
       palette: {
-        sbBgColor: "red" // t.palette.primary.light
+        background: {
+          paper: "#000",
+          default: "#333"
+        },
       },
     });
   };
 
-  const rc = [sbBgColor].reduce(
+  const sbBgColor = (t: Theme) => {
+    return createTheme(t, {
+      palette: {
+        sbBgColor: t.palette.primary.dark
+      },
+    });
+  };
+
+  const rc = [background, sbBgColor].reduce(
     (rc, one) => one(rc),
     createTheme({
       palette: {

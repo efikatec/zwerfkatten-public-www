@@ -72,7 +72,7 @@ export const Doc = ({
   );
 
   return (
-    <Paper>
+    <Paper sx={{padding: "36px"}}>
       <Typography variant="h2" component="h4" color="secondary" gutterBottom>
         {title}
       </Typography>

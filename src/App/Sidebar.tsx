@@ -1,4 +1,4 @@
-import { Drawer, IconButton, styled } from "@mui/material";
+import { Drawer, IconButton, Box, styled } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import {
   useHambugerMode,
@@ -6,7 +6,6 @@ import {
   useSetSidebarOpen,
 } from "../contexts/Theme2NavContent";
 import Nav from "./Nav";
-
 
 const SlidingSidebar = () => {
   const sidebarOpen = useSidebarOpen();
@@ -19,21 +18,33 @@ const SlidingSidebar = () => {
       open={sidebarOpen}
       sx={{
         flexShrink: 0,
+        height: "100%",
         "& .MuiDrawer-paper": {
           boxSizing: "border-box",
-          backgroundColor: "sbBgColor"
+          backgroundColor: "sbBgColor",
         },
       }}
     >
       <DrawerHeader>
-        <IconButton onClick={() => setSidebarOpen(false)}>
+        <IconButton
+          onClick={() => setSidebarOpen(false)}
+          color="default"
+          size="large"
+        >
           <ChevronLeftIcon />
         </IconButton>
       </DrawerHeader>
       <Nav />
     </Drawer>
   );
-  return <Nav />;
+};
+
+const FixedSidebar = () => {
+  return (
+    <Box sx={{mr: "16px", height: "100%", backgroundColor: "sbBgColor"}}>
+      <Nav />
+    </Box>
+  );
 };
 
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -45,35 +56,14 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-
 const Sidebar = () => {
   const hambugerMode = useHambugerMode();
 
-  return hambugerMode ? <SlidingSidebar /> : <Nav />;
+  return (
+    <Box sx={{ flexGrow: 0, flexShrink: 0 }}>
+      {hambugerMode ? <SlidingSidebar /> : <FixedSidebar />}
+    </Box>
+  );
 };
-
-//   return (
-//     <Drawer
-//       anchor="left"
-//       variant="temporary"
-//       open
-//       sx={{
-//         width: drawerWidth,
-//         flexShrink: 0,
-//         "& .MuiDrawer-paper": {
-//           width: drawerWidth,
-//           boxSizing: "border-box",
-//         },
-//       }}
-//     >
-//       <DrawerHeader>
-//         <IconButton onClick={() => setSidebarOpen(false)}>
-//           <ChevronLeftIcon />
-//         </IconButton>
-//       </DrawerHeader>
-//       <Nav />
-//     </Drawer>
-//   );
-// };
 
 export default Sidebar;

@@ -51,7 +51,7 @@ const Nav = () => {
   ];
 
   return (
-    <List sx={{ bgcolor: "sbBgColor", flexGrow: 0, flexShrink: 0 }}>
+    <List sx={{ backgroundColor: "transparent", flexGrow: 0, flexShrink: 0 }}>
       {links.map((one, index) => (
         <LinkBtn
           key={index}

@@ -45,7 +45,7 @@ const chapterContents: IChapterContent = {
 
 const OwnCatPage = () => {
   return (
-    <Doc
+    <Doc 
       title="Weetjes over katten"
       chapterTitles={chapterTitles}
       chapterContents={chapterContents}
