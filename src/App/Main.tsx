@@ -1,29 +1,11 @@
-import { Routes, Route, RouteProps, Navigate } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import OwnCatPage from "../pages/OwnCatPage";
-import Error404Page from "../pages/Error404Page";
-import { Box } from "@mui/material";
-
-const routes: RouteProps[] = [
-  {
-    path: "/",
-    element: <Navigate to="/home" />,
-  },
-  {
-    path: "/own-cat",
-    element: <OwnCatPage />,
-  },
-  {
-    path: "/home",
-    element: <HomePage />,
-  },
-  {
-    path: "*",
-    element: <Error404Page />,
-  },
-];
+import { Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Box, CircularProgress } from "@mui/material";
+import { useLazyRoutes } from "../contexts";
 
 const Main = () => {
+  const lazyRoutes = useLazyRoutes();
+
   return (
     <main>
       <Box
@@ -34,11 +16,21 @@ const Main = () => {
           flexGrow: 1,
         }}
       >
-        <Routes>
-          {routes.map((one, index) => (
-            <Route key={index} path={one.path} element={one.element} />
-          ))}
-        </Routes>
+        <Suspense
+          fallback={
+            <div>
+              <CircularProgress color="secondary" />
+            </div>
+          }
+        >
+          <Routes>
+            {lazyRoutes.map((one, index) => {
+              const Page = one.Page;
+
+              return <Route key={index} path={one.path} element={<Page />} />;
+            })}
+          </Routes>
+        </Suspense>
       </Box>
     </main>
   );

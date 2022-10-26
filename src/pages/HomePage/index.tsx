@@ -1,44 +1,20 @@
 import Grid from "@mui/material/Grid";
 import Tile, { ITile } from "./Tile";
-import OwnCatTeaser from "./OwnCatTeaser";
+import Teaser from "./Teaser";
+import castrationContentTable from "../CastrationPage/content-table";
 
 const tiles: ITile[] = [
   {
-    title: "Mijn eigen katje",
-    img: "/images/own-cat.jpg",
-    alt: "Katje in een handpalm",
-    Teaser: OwnCatTeaser,
-    moreInfoUrl: "/own-cat"
-  },
-  {
-    title: "Mijn eigen katje",
-    img: "/images/own-cat.jpg",
-    alt: "Katje in een handpalm",
-    Teaser: OwnCatTeaser,
-  },
-  {
-    title: "Mijn eigen katje",
-    img: "/images/own-cat.jpg",
-    alt: "Katje in een handpalm",
-    Teaser: OwnCatTeaser,
-  },
-  {
-    title: "Mijn eigen katje",
-    img: "/images/own-cat.jpg",
-    alt: "Katje in een handpalm",
-    Teaser: OwnCatTeaser,
-  },
-  {
-    title: "Mijn eigen katje",
-    img: "/images/own-cat.jpg",
-    alt: "Katje in een handpalm",
-    Teaser: OwnCatTeaser,
-  },
-  {
-    title: "Mijn eigen katje",
-    img: "/images/own-cat.jpg",
-    alt: "Katje in een handpalm",
-    Teaser: OwnCatTeaser,
+    title: "Castratie van katten",
+    img: "/images/schaar.jpg",
+    alt: "Castratieschaar",
+    Teaser: () => (
+      <Teaser docUrl={"/castration"} contentTable={castrationContentTable}>
+        Naast de wettelijke verplichting zijn er talrijke voordelen om katten,
+        inclusief huiskatten, te castreren.
+      </Teaser>
+    ),
+    moreInfoUrl: "/castration",
   },
 ];
 

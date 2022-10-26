@@ -4,7 +4,6 @@ import ToggleThemeMode from "../components/ToggleThemeMode";
 import {
   useHambugerMode,
   useSetSidebarOpen,
-  useSidebarOpen,
 } from "../contexts/Theme2NavContent";
 
 const Header = () => {
@@ -12,7 +11,7 @@ const Header = () => {
   const setSidebarOpen = useSetSidebarOpen();
 
   return (
-    <AppBar position="sticky" color="primary">
+    <AppBar position="sticky" sx={{ backgroundColor: "sbBgColor" }}>
       <Toolbar color="transparent">
         <Typography variant="h4" component="span" sx={{ flexGrow: 1 }}>
           Operatie Zwerfkatten

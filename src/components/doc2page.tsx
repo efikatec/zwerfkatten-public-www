@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import {
   Typography,
@@ -9,7 +9,14 @@ import {
   ListItemText,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { IDoc, IChapterTitle, IChapterContent, IParagraph } from ".";
+import {
+  IChaptersContent,
+  IChapterTitle,
+  IContentTable,
+  IParagraph,
+} from "../models/doc";
+
+// https://robinvdvleuten.nl/blog/scroll-a-react-component-into-view/
 
 export const DocListItem = ({ primary }: { primary: string }) => {
   return (
@@ -41,13 +48,13 @@ export const Chapter = ({
   const [, hash] = location.hash.split("#");
 
   return (
-    <Stack direction="column" spacing={0}>
+    <Stack direction="column" spacing={0} component="section">
       <Typography
         id={id}
         variant="h4"
         component="h2"
         gutterBottom
-        color={id === hash ? "secondary" : "primary"}
+        color={id === hash ? "sbBgColor" : "text.primary"}
       >
         {title}
       </Typography>
@@ -56,25 +63,29 @@ export const Chapter = ({
   );
 };
 
-export const Doc = ({
-  title,
-  chapterTitles,
-  chapterContents,
-}: React.PropsWithChildren<IDoc>) => {
+const Doc2Page = ({
+  contentTable,
+  captersContent,
+}: {
+  contentTable: IContentTable;
+  captersContent: IChaptersContent;
+}) => {
+  const titleRef = useRef();
+
   const chapters = (
     <>
-      {chapterTitles.map((one) => (
+      {contentTable.chapterTitles.map((one) => (
         <Chapter key={one.id} id={one.id} title={one.title}>
-          {chapterContents[one.id] ?? <></>}
+          {captersContent[one.id] ?? <></>}
         </Chapter>
       ))}
     </>
   );
 
   return (
-    <Paper sx={{padding: "36px"}}>
-      <Typography variant="h2" component="h4" color="secondary" gutterBottom>
-        {title}
+    <Paper sx={{ padding: "36px" }}>
+      <Typography variant="h2" component="h4" color="text.primary" gutterBottom>
+        {contentTable.title}
       </Typography>
       <Stack direction="column" spacing={4}>
         {chapters}
@@ -82,3 +93,5 @@ export const Doc = ({
     </Paper>
   );
 };
+
+export default Doc2Page;

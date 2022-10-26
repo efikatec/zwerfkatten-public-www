@@ -6,7 +6,6 @@ import {
   CardContent,
   CardActions,
   CardMedia,
-  Paper,
 } from "@mui/material";
 
 interface ITileHeader {
@@ -62,6 +61,7 @@ const TileActions = ({ moreInfoUrl }: Required<ITileActions>) => {
     <CardActions>
       <Button
         variant="contained"
+        color="info"
         size="small"
         onClick={() => navigate(moreInfoUrl)}
       >

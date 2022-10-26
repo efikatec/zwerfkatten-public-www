@@ -3,19 +3,19 @@ import {
   ThemeProvider as MuiThemeProvider,
   Theme,
   createTheme,
-  
 } from "@mui/material/styles";
 import { PaletteMode, colors } from "@mui/material";
 
 const SetPaletteModeContext = createContext((mode: PaletteMode) => {});
-const { palette } = createTheme();
-
 const lightTheme = (() => {
   const primaryPalette = (t: Theme) => {
     return createTheme(t, {
       palette: {
         primary: {
-          main: colors.lightBlue[500],
+          light: colors.amber[200],
+          main: colors.amber[300],
+          dark: colors.amber[500],
+          contrastText: "#222",
         },
       },
     });
@@ -24,7 +24,20 @@ const lightTheme = (() => {
     return createTheme(t, {
       palette: {
         secondary: {
-          main: colors.purple[500]
+          light: colors.lightBlue[300],
+          main: colors.lightBlue[500],
+          dark: colors.lightBlue[700],
+          contrastText: "#222",
+        },
+      },
+    });
+  };
+  const backgroundPalette = (t: Theme) => {
+    return createTheme(t, {
+      palette: {
+        background: {
+          //          default: colors.grey[600],
+          default: colors.amber[200],
         },
       },
     });
@@ -44,24 +57,37 @@ const lightTheme = (() => {
   //   });
   // };
 
-  // const customProperties = (t: Theme) => {
-  //   return createTheme(t, {
-  //     custom: {
-  //       sbBgColor: "blue",
-  //     },
-  //   });
-  // };
-
-  const customProperties = (t: Theme) => {
+  const sbBgColor = (t: Theme) => {
     return createTheme(t, {
       palette: {
-        sbBgColor: t.palette.primary.dark
+        sbBgColor: t.palette.primary.dark,
       },
     });
   };
 
+  const hoverMuiListItemButton = (t: Theme) => {
+    return createTheme(t, {
+      components: {
+        MuiListItem: {
+          styleOverrides: {
+            root: {
+              "&.MuiListItem-button:hover": {
+                backgroundColor: t.palette.grey[500],
+              },
+            },
+          },
+        },
+      },
+    });
+  };
 
-  return [primaryPalette, secondaryPalette, customProperties].reduce(
+  return [
+    primaryPalette,
+    secondaryPalette,
+    backgroundPalette,
+    sbBgColor,
+    hoverMuiListItemButton,
+  ].reduce(
     (rc, one) => one(rc),
     createTheme({
       palette: {
@@ -72,12 +98,24 @@ const lightTheme = (() => {
 })();
 
 const darkTheme = (() => {
+  const primaryPalette = (t: Theme) => {
+    return createTheme(t, {
+      palette: {
+        primary: {
+          main: colors.blueGrey[700],
+          light: colors.blueGrey[500],
+          dark: colors.blueGrey[900],
+          contrastText: "#111",
+        },
+      },
+    });
+  };
+
   const background = (t: Theme) => {
     return createTheme(t, {
       palette: {
         background: {
-          paper: "#000",
-          default: "#333"
+          default: colors.indigo[900],
         },
       },
     });
@@ -86,12 +124,33 @@ const darkTheme = (() => {
   const sbBgColor = (t: Theme) => {
     return createTheme(t, {
       palette: {
-        sbBgColor: t.palette.primary.dark
+        sbBgColor: colors.indigo[700],
       },
     });
   };
 
-  const rc = [background, sbBgColor].reduce(
+  const hoverMuiListItemButton = (t: Theme) => {
+    return createTheme(t, {
+      components: {
+        MuiListItem: {
+          styleOverrides: {
+            root: {
+              "&.MuiListItem-button:hover": {
+                backgroundColor: t.palette.grey[800],
+              },
+            },
+          },
+        },
+      },
+    });
+  };
+
+  const rc = [
+    primaryPalette,
+    background,
+    sbBgColor,
+    hoverMuiListItemButton,
+  ].reduce(
     (rc, one) => one(rc),
     createTheme({
       palette: {

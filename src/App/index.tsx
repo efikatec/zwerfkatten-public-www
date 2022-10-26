@@ -1,9 +1,19 @@
-import { CssBaseline, Box, Stack, Container } from "@mui/material";
-import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider, Theme2NavProvider } from "../contexts";
+import { lazy } from "react";
+import { Navigate } from "react-router-dom";
+import { CssBaseline, Box, Container } from "@mui/material";
+import {
+  ThemeProvider,
+  Theme2NavProvider,
+  LazyRoutesProvider,
+} from "../contexts";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
+
+const HomePage = lazy(() => import("../pages/HomePage"));
+const CastrationPage = lazy(() => import("../pages/CastrationPage"));
+const Error404Page = lazy(() => import("../pages/Error404Page"));
+const RedirectToHome = () => <Navigate to="/home" />;
 
 const Content = () => {
   return (
@@ -40,15 +50,36 @@ const Content = () => {
 };
 
 const App = () => {
+  const lazyRoutes = [
+    {
+      text: "Home",
+      path: "/home",
+      Page: HomePage,
+    },
+    {
+      text: "Castratie",
+      path: "/castration",
+      Page: CastrationPage,
+    },
+    {
+      path: "/",
+      Page: RedirectToHome,
+    },
+    {
+      path: "*",
+      Page: Error404Page,
+    },
+  ];
+
   return (
-    <BrowserRouter>
+    <LazyRoutesProvider lazyRoutes={lazyRoutes}>
       <ThemeProvider>
         <Theme2NavProvider>
           <CssBaseline />
           <Content />
         </Theme2NavProvider>
       </ThemeProvider>
-    </BrowserRouter>
+    </LazyRoutesProvider>
   );
 };
 
