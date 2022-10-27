@@ -12,6 +12,7 @@ import Main from "./Main";
 
 const HomePage = lazy(() => import("../pages/HomePage"));
 const CastrationPage = lazy(() => import("../pages/CastrationPage"));
+const StrayCatsPage = lazy(() => import("../pages/StrayCatsPage"));
 const Error404Page = lazy(() => import("../pages/Error404Page"));
 const RedirectToHome = () => <Navigate to="/home" />;
 
@@ -60,6 +61,11 @@ const App = () => {
       text: "Castratie",
       path: "/castration",
       Page: CastrationPage,
+    },
+    {
+      text: "Zwerfkatten",
+      path: "/stray-cats",
+      Page: StrayCatsPage,
     },
     {
       path: "/",

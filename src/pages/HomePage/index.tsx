@@ -2,6 +2,7 @@ import Grid from "@mui/material/Grid";
 import Tile, { ITile } from "./Tile";
 import Teaser from "./Teaser";
 import castrationContentTable from "../CastrationPage/content-table";
+import straycatsContentTable from "../StrayCatsPage/content-table";
 
 const tiles: ITile[] = [
   {
@@ -15,6 +16,17 @@ const tiles: ITile[] = [
       </Teaser>
     ),
     moreInfoUrl: "/castration",
+  },
+  {
+    title: "Zwerfkatten in uw tuin",
+    img: "/images/stray-cats.jpg",
+    alt: "Zwerfkatten",
+    Teaser: () => (
+      <Teaser docUrl={"/stray-cats"} contentTable={straycatsContentTable}>
+        Zwerfkatte in uw tuin. Wat nu ?
+      </Teaser>
+    ),
+    moreInfoUrl: "/stray-cats",
   },
 ];
 

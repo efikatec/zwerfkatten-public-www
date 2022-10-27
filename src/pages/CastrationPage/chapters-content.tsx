@@ -1,12 +1,18 @@
-import { List, Link, ListItem, Stack, Typography } from "@mui/material";
-import EmailIcon from "@mui/icons-material/Email";
+import {
+  List,
+  ListItemText,
+  Link,
+  ListItem,
+  Stack,
+  Typography,
+} from "@mui/material";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import HttpIcon from "@mui/icons-material/Http";
 import { IChaptersContent } from "../../models/doc";
-import { Paragraph, DocListItem } from "../../components/doc2page";
+import { Paragraph, DocPrimaryList } from "../../components/doc2page";
 
 const chaptersContent: IChaptersContent = {
-  "d8bfcabf-91c0-4ac3-a984-0b9b5439b762": (
+  d8bfcabf: (
     <Paragraph>
       In 2014 kwamen meer dan 30.000 katten in Belgische asielen terecht.
       <br />
@@ -14,21 +20,21 @@ const chaptersContent: IChaptersContent = {
       worden….
     </Paragraph>
   ),
-  "f3047dd6-a785-4378-952c-7b1a21451f88": (
+  f3047dd6: (
     <Paragraph>
       Het steriel maken van jouw kattin en kater heeft enkel voordelen:
-      <List dense>
-        {[
+      <DocPrimaryList
+        items={[
           "geen sproeien, geen nachtelijk krijsen omwille van paringsgedrag",
           "minder ziekten worden overgedragen door vechten",
           "minder kans op borsttumoren bij de kattin",
-        ].map((one, index) => (
-          <DocListItem key={index} primary={one} />
+        ].map((one) => (
+          <ListItemText primary={one} />
         ))}
-      </List>
+      />
     </Paragraph>
   ),
-  "4d24c2bb-a2a3-423a-915c-4c51f9e1c7c4": (
+  "4d24c2bb": (
     <Paragraph>
       In 2014 kwamen meer dan 30.000 katten in Belgische asielen terecht.
       <br />
@@ -36,7 +42,7 @@ const chaptersContent: IChaptersContent = {
       worden….
     </Paragraph>
   ),
-  "2bed21f6-1ce9-491b-8a2e-2a037d7b577c": (
+  "2bed21f6": (
     <Paragraph>
       Niet gewenste katten en overtollige nesten worden nog steeds gedumpt door
       onverantwoorde eigenaars.
@@ -49,7 +55,7 @@ const chaptersContent: IChaptersContent = {
       van mensen die zich over achtergelaten katten ontfermen.
     </Paragraph>
   ),
-  "8fccf36a-3eb0-4ec6-b197-2a2e0d55af3a": (
+  "8fccf36a": (
     <Paragraph>
       Alle katten die verkocht of weggeven worden, moeten vooraf gecastreerd en
       gechipt worden.
@@ -58,7 +64,7 @@ const chaptersContent: IChaptersContent = {
       31/03/2017 gecastreerd en gechipt worden.
     </Paragraph>
   ),
-  "a702f2fa-8042-497d-a6ed-fbccb22853e9": (
+  a702f2fa: (
     <Paragraph>
       <List dense>
         <ListItem>

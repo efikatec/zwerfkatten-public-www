@@ -1,14 +1,16 @@
-import React, { forwardRef, useRef } from "react";
+import { PropsWithChildren, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import {
   Typography,
   Paper,
   Stack,
+  List,
   ListItem,
   ListItemIcon,
-  ListItemText,
 } from "@mui/material";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+// import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import {
   IChaptersContent,
   IChapterTitle,
@@ -16,22 +18,43 @@ import {
   IParagraph,
 } from "../models/doc";
 
-// https://robinvdvleuten.nl/blog/scroll-a-react-component-into-view/
-
-export const DocListItem = ({ primary }: { primary: string }) => {
+const BaseList = ({
+  icon,
+  items,
+  pl,
+  pb,
+}: {
+  icon: JSX.Element;
+  items: JSX.Element[];
+  pl: number;
+  pb: number;
+}) => {
   return (
-    <ListItem dense>
-      <ListItemIcon sx={{ minWidth: 0 }}>
-        <ArrowRightIcon />
-      </ListItemIcon>
-      <ListItemText primary={primary} />
-    </ListItem>
+    <List dense sx={{ pl, pb, pt: 0 }}>
+      {items.map((one, index) => (
+        <ListItem key={index} dense>
+          <ListItemIcon sx={{ minWidth: 0 }}>{icon}</ListItemIcon>
+          {one}
+        </ListItem>
+      ))}
+    </List>
   );
 };
 
-export const Paragraph = ({
-  children,
-}: React.PropsWithChildren<IParagraph>) => {
+export const DocPrimaryList = ({ items }: { items: JSX.Element[] }) => (
+  <BaseList icon={<KeyboardArrowRightIcon />} items={items} pl={0} pb={1} />
+);
+
+export const DocSecondaryList = ({ items }: { items: JSX.Element[] }) => (
+  <BaseList
+    icon={<KeyboardDoubleArrowRightIcon />}
+    items={items}
+    pl={6}
+    pb={0}
+  />
+);
+
+export const Paragraph = ({ children }: PropsWithChildren<IParagraph>) => {
   return (
     <Typography variant="body1" component="span">
       {children}
@@ -39,14 +62,16 @@ export const Paragraph = ({
   );
 };
 
+interface IRtChapter extends IChapterTitle {
+  hash?: string;
+}
+
 export const Chapter = ({
   id,
   title,
   children,
-}: React.PropsWithChildren<IChapterTitle>) => {
-  const location = useLocation();
-  const [, hash] = location.hash.split("#");
-
+  hash,
+}: PropsWithChildren<IRtChapter>) => {
   return (
     <Stack direction="column" spacing={0} component="section">
       <Typography
@@ -70,17 +95,25 @@ const Doc2Page = ({
   contentTable: IContentTable;
   captersContent: IChaptersContent;
 }) => {
-  const titleRef = useRef();
+  const location = useLocation();
+  const [, hash] = location.hash.split("#");
 
   const chapters = (
     <>
       {contentTable.chapterTitles.map((one) => (
-        <Chapter key={one.id} id={one.id} title={one.title}>
+        <Chapter key={one.id} id={one.id} title={one.title} hash={hash}>
           {captersContent[one.id] ?? <></>}
         </Chapter>
       ))}
     </>
   );
+
+  useEffect(() => {
+    if (hash) {
+      const chapter = document.getElementById(hash);
+      chapter && chapter.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [hash]);
 
   return (
     <Paper sx={{ padding: "36px" }}>
