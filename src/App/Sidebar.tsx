@@ -41,7 +41,13 @@ const SlidingSidebar = () => {
 
 const FixedSidebar = () => {
   return (
-    <Box sx={{mr: "16px", height: "100%", backgroundColor: "sbBgColor"}}>
+    <Box
+      sx={{
+        mr: "16px",
+        height: "100%",
+        backgroundColor: "sbBgColor",
+      }}
+    >
       <Nav />
     </Box>
   );

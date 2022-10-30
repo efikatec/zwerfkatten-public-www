@@ -30,7 +30,13 @@ const Nav = () => {
   const lazyRoutes = useLazyRoutes();
 
   return (
-    <List sx={{ backgroundColor: "transparent", flexGrow: 0, flexShrink: 0 }}>
+    <List
+      sx={{
+        backgroundColor: "transparent",
+        flexGrow: 0,
+        flexShrink: 0,
+      }}
+    >
       {lazyRoutes
         .filter((one) => !!one.text)
         .map((one, index) => (

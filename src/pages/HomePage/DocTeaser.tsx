@@ -10,16 +10,16 @@ import {
 import ReadMoreIcon from "@mui/icons-material/ReadMore";
 import { IContentTable } from "../../models/doc";
 
-interface ITeaser {
+interface IDocTeaser {
   docUrl: string;
   contentTable: IContentTable;
 }
 
-export const Teaser = ({
+export const DocTeaser = ({
   docUrl,
   contentTable,
   children,
-}: React.PropsWithChildren<ITeaser>) => {
+}: React.PropsWithChildren<IDocTeaser>) => {
   const navigate = useNavigate();
 
   const listItems = contentTable.chapterTitles
@@ -51,4 +51,4 @@ export const Teaser = ({
   );
 };
 
-export default Teaser;
+export default DocTeaser;

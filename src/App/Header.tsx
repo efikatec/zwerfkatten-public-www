@@ -1,14 +1,28 @@
-import { Typography, AppBar, Toolbar, Stack, IconButton } from "@mui/material";
+import {
+  Typography,
+  AppBar,
+  Toolbar,
+  Stack,
+  IconButton,
+  Tooltip,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import EmailIcon from "@mui/icons-material/Email";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import SmsIcon from "@mui/icons-material/Sms";
 import ToggleThemeMode from "../components/ToggleThemeMode";
 import {
   useHambugerMode,
   useSetSidebarOpen,
 } from "../contexts/Theme2NavContent";
+import LinkIconBtn from "../components/LinkIconBtn";
 
 const Header = () => {
   const hambugerMode = useHambugerMode();
   const setSidebarOpen = useSetSidebarOpen();
+
+  const emailUs = () => {};
+  const cocco = <WhatsAppIcon />;
 
   return (
     <AppBar position="sticky" sx={{ backgroundColor: "sbBgColor" }}>
@@ -16,7 +30,25 @@ const Header = () => {
         <Typography variant="h4" component="span" sx={{ flexGrow: 1 }}>
           Operatie Zwerfkatten
         </Typography>
+
         <Stack direction="row" spacing={4}>
+          <Stack direction="row" spacing={0}>
+            <LinkIconBtn
+              tooltip={"Een email sturen naar monika.sormann@telenet.be"}
+              icon={<EmailIcon />}
+              href={"mailto:monika.sormann@telenet.be"}
+            />
+            <LinkIconBtn
+              tooltip={"Whatapp met Monika op +32 477 270 753"}
+              icon={<WhatsAppIcon />}
+              href={"https://wa.me/32477270753"}
+            />
+            <LinkIconBtn
+              tooltip={"Sms sturen naar Monika op +32 477 270 753"}
+              icon={<SmsIcon />}
+              href={"sms:+32477270753"}
+            />
+          </Stack>
           <ToggleThemeMode />
           {hambugerMode && (
             <IconButton

@@ -10,6 +10,7 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import HttpIcon from "@mui/icons-material/Http";
 import { IChaptersContent } from "../../models/doc";
 import { Paragraph, DocPrimaryList } from "../../components/doc2page";
+import LinkIconBtn from "../../components/LinkIconBtn";
 
 const chaptersContent: IChaptersContent = {
   d8bfcabf: (
@@ -68,41 +69,23 @@ const chaptersContent: IChaptersContent = {
     <Paragraph>
       <List dense>
         <ListItem>
-          <Link
-            component="a"
-            target="_blank"
-            rel="noreferrer"
-            href="mailto:dierenwelzijn@vlaanderen.be"
-            underline="hover"
-            variant="body1"
-            color="text.primary"
+          <LinkIconBtn
+            tooltip={"Email naar Dierenwelzijn van Vlaanderen"}
+            icon={<EmailOutlinedIcon />}
+            href={"mailto:dierenwelzijn@vlaanderen.be"}
           >
-            <Stack direction="row" spacing={1} alignItems="center">
-              <EmailOutlinedIcon />
-              <Typography variant="body1" component="span">
-                Vlaanderen Dierenwelzijn
-              </Typography>
-            </Stack>
-          </Link>
+            Vlaanderen Dierenwelzijn
+          </LinkIconBtn>
         </ListItem>
 
         <ListItem>
-          <Link
-            component="a"
-            target="_blank"
-            rel="noreferrer"
-            href="http://www.lne.be/meer-themas/dierenwelzijn"
-            underline="hover"
-            variant="body1"
-            color="text.primary"
+          <LinkIconBtn
+            tooltip={"Link naar Dierenwelzijn van Vlaanderen"}
+            icon={<HttpIcon />}
+            href={"http://www.lne.be/meer-themas/dierenwelzijn"}
           >
-            <Stack direction="row" spacing={1} alignItems="center">
-              <HttpIcon />
-              <Typography variant="body1" component="span">
-                Vlaanderen Dierenwelzijn
-              </Typography>
-            </Stack>
-          </Link>
+            Vlaanderen Dierenwelzijn
+          </LinkIconBtn>
         </ListItem>
       </List>
     </Paragraph>

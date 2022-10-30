@@ -1,0 +1,11 @@
+--2022-10-28 10:01:04--  https://d.newsweek.com/en/full/1973779/stock-image-cats-snuggling-together.jpg?w=1600
+Resolving d.newsweek.com (d.newsweek.com)... 151.139.128.11
+Connecting to d.newsweek.com (d.newsweek.com)|151.139.128.11|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [image/jpeg]
+Saving to: ‘stock-image-cats-snuggling-together.jpg?w=1600’
+
+stock-image-cats-snuggling-together.jpg?w=1     [<=>                                                                                      ]       0  --.-KB/s               stock-image-cats-snuggling-together.jpg?w=1     [ <=>                                                                                     ] 185,31K   714KB/s               stock-image-cats-snuggling-together.jpg?w=1     [  <=>                                                                                    ] 622,72K  1,69MB/s    in 0,4s    
+
+2022-10-28 10:01:05 (1,69 MB/s) - ‘stock-image-cats-snuggling-together.jpg?w=1600’ saved [637665]
+

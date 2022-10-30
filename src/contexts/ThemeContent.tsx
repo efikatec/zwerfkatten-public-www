@@ -7,6 +7,34 @@ import {
 import { PaletteMode, colors } from "@mui/material";
 
 const SetPaletteModeContext = createContext((mode: PaletteMode) => {});
+
+const commonTheme = (theme: Theme) => {
+  const cardActionsOnBottom = (t: Theme) => {
+    return createTheme(t, {
+      components: {
+        MuiCard: {
+          styleOverrides: {
+            root: {
+              display: "flex",
+              flexDirection: "column",
+            },
+          },
+        },
+        MuiCardContent: {
+          styleOverrides: {
+            root: {
+              flexGrow: 1,
+            },
+          },
+        },
+      },
+    });
+  };
+
+  return cardActionsOnBottom(theme);
+  // return [cardActionsOnBottom].reduce((rc, one) => one(rc), theme);
+};
+
 const lightTheme = (() => {
   const primaryPalette = (t: Theme) => {
     return createTheme(t, {
@@ -82,6 +110,7 @@ const lightTheme = (() => {
   };
 
   return [
+    commonTheme,
     primaryPalette,
     secondaryPalette,
     backgroundPalette,
@@ -146,6 +175,7 @@ const darkTheme = (() => {
   };
 
   const rc = [
+    commonTheme,
     primaryPalette,
     background,
     sbBgColor,
