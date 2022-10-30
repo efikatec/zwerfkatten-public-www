@@ -1,7 +1,3 @@
-import { List, Link, ListItem, Stack, Typography } from "@mui/material";
-import EmailIcon from "@mui/icons-material/Email";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import HttpIcon from "@mui/icons-material/Http";
 import { IChaptersContent } from "../../models/doc";
 import { Paragraph } from "../../components/doc2page";
 

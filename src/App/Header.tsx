@@ -7,9 +7,9 @@ import {
   Tooltip,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import EmailIcon from "@mui/icons-material/Email";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import SmsIcon from "@mui/icons-material/Sms";
+import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
 import ToggleThemeMode from "../components/ToggleThemeMode";
 import {
   useHambugerMode,
@@ -35,7 +35,7 @@ const Header = () => {
           <Stack direction="row" spacing={0}>
             <LinkIconBtn
               tooltip={"Een email sturen naar monika.sormann@telenet.be"}
-              icon={<EmailIcon />}
+              icon={<MailOutlineIcon />}
               href={"mailto:monika.sormann@telenet.be"}
             />
             <LinkIconBtn
@@ -45,7 +45,7 @@ const Header = () => {
             />
             <LinkIconBtn
               tooltip={"Sms sturen naar Monika op +32 477 270 753"}
-              icon={<SmsIcon />}
+              icon={<SmsOutlinedIcon />}
               href={"sms:+32477270753"}
             />
           </Stack>
