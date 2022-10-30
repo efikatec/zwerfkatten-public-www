@@ -1,11 +1,4 @@
-import {
-  Typography,
-  AppBar,
-  Toolbar,
-  Stack,
-  IconButton,
-  Tooltip,
-} from "@mui/material";
+import { Typography, AppBar, Toolbar, Stack, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -20,9 +13,6 @@ import LinkIconBtn from "../components/LinkIconBtn";
 const Header = () => {
   const hambugerMode = useHambugerMode();
   const setSidebarOpen = useSetSidebarOpen();
-
-  const emailUs = () => {};
-  const cocco = <WhatsAppIcon />;
 
   return (
     <AppBar position="sticky" sx={{ backgroundColor: "sbBgColor" }}>
