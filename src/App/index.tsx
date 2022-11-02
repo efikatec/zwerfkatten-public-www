@@ -1,5 +1,4 @@
 import { lazy } from "react";
-import { Navigate } from "react-router-dom";
 import { CssBaseline, Box, Container } from "@mui/material";
 import {
   ThemeProvider,
@@ -17,7 +16,6 @@ const StrayCatsPage = lazy(() => import("../pages/StrayCatsPage"));
 const IntroducingCatsPage = lazy(() => import("../pages/IntroducingCatsPage"));
 
 const Error404Page = lazy(() => import("../pages/Error404Page"));
-const RedirectToHome = () => <Navigate to="/home" />;
 
 const Content = () => {
   return (
@@ -57,7 +55,7 @@ const App = () => {
   const lazyRoutes = [
     {
       text: "Home",
-      path: "/home",
+      path: "/",
       Page: HomePage,
     },
     {
@@ -74,10 +72,6 @@ const App = () => {
       text: "Katten Introduceren",
       path: "/introducing-cats",
       Page: IntroducingCatsPage,
-    },
-    {
-      path: "/",
-      Page: RedirectToHome,
     },
     {
       path: "*",

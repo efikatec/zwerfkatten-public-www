@@ -1,11 +1,4 @@
-import {
-  List,
-  ListItemText,
-  Link,
-  ListItem,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { List, ListItemText, ListItem, Typography } from "@mui/material";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import HttpIcon from "@mui/icons-material/Http";
 import { IChaptersContent } from "../../models/doc";

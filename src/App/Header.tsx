@@ -2,6 +2,7 @@ import { Typography, AppBar, Toolbar, Stack, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
 import ToggleThemeMode from "../components/ToggleThemeMode";
 import {
@@ -29,14 +30,19 @@ const Header = () => {
               href={"mailto:monika.sormann@telenet.be"}
             />
             <LinkIconBtn
+              tooltip={"Sms sturen naar Monika op +32 477 270 753"}
+              icon={<SmsOutlinedIcon />}
+              href={"sms:+32477270753"}
+            />
+            <LinkIconBtn
               tooltip={"Whatapp met Monika op +32 477 270 753"}
               icon={<WhatsAppIcon />}
               href={"https://wa.me/32477270753"}
             />
             <LinkIconBtn
-              tooltip={"Sms sturen naar Monika op +32 477 270 753"}
-              icon={<SmsOutlinedIcon />}
-              href={"sms:+32477270753"}
+              tooltip={"Operatie Zwerfkatten op Facebook"}
+              icon={<FacebookOutlinedIcon />}
+              href={"https://nl-nl.facebook.com/groups/54131394964/"}
             />
           </Stack>
           <ToggleThemeMode />

@@ -6,8 +6,8 @@ const Error404Page = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-     setTimeout(() => navigate("/"), 2000);
-  }, []);
+    setTimeout(() => navigate("/"), 2000);
+  }, [navigate]);
 
   return (
     <Container maxWidth="sm">
@@ -27,7 +27,7 @@ const Error404Page = () => {
           height="auto"
           image="/images/cat-looking.jpg"
           alt="Pagina niet gevonden"
-          sx={{  objectFit: "contain" }}
+          sx={{ objectFit: "contain" }}
         />
         <Stack
           direction="column"
@@ -36,7 +36,12 @@ const Error404Page = () => {
           spacing={0}
         >
           {["Gezocht", "maar niet gevonden"].map((one, index) => (
-            <Typography key={index} variant="h3" component="span" color="primary">
+            <Typography
+              key={index}
+              variant="h3"
+              component="span"
+              color="primary"
+            >
               {one}
             </Typography>
           ))}
