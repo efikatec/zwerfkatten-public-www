@@ -21,6 +21,7 @@ import castrationContentTable from "../CastrationPage/content-table";
 import straycatsContentTable from "../StrayCatsPage/content-table";
 import introducingCatsContentTable from "../IntroducingCatsPage/content-table";
 import LinkIconBtn from "../../components/LinkIconBtn";
+import { useEffect, useState } from "react";
 
 const TileWho = (
   <Tile>
@@ -127,7 +128,7 @@ const TileWhat = (() => {
                 icon={<EmailOutlinedIcon fontSize="small" />}
                 href={"mailto:milieu@oudenaarde.be"}
               >
-                Dienst mileu Oudenaarde
+                Dienst milieu Oudenaarde
               </LinkIconBtn>
             </>,
             <>Hulp bij aangereden of zieke katten die geen eigenaar hebben</>,

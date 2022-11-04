@@ -11,7 +11,7 @@ const chapterTitles: IChapterTitle[] = [
   },
   {
     id: "4d24c2bb",
-    title: "Dierenassielen",
+    title: "Dierenasielen",
   },
   {
     id: "2bed21f6",

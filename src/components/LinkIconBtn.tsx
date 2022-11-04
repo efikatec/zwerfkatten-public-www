@@ -18,6 +18,7 @@ const LinkIconBtn = ({
     sx={{ whiteSpace: "nowrap" }}
   >
     <Stack
+      component="span"
       direction="row"
       spacing={1}
       alignItems="center"

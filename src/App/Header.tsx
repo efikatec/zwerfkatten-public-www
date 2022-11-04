@@ -19,7 +19,7 @@ const Header = () => {
     <AppBar position="sticky" sx={{ backgroundColor: "sbBgColor" }}>
       <Toolbar color="transparent">
         <Typography variant="h4" component="span" sx={{ flexGrow: 1 }}>
-          Operatie Zwerfkatten
+          Operatie Zwerfkat
         </Typography>
 
         <Stack direction="row" spacing={4}>
@@ -40,7 +40,7 @@ const Header = () => {
               href={"https://wa.me/32477270753"}
             />
             <LinkIconBtn
-              tooltip={"Operatie Zwerfkatten op Facebook"}
+              tooltip={"Operatie Zwerfkat op Facebook"}
               icon={<FacebookOutlinedIcon />}
               href={"https://nl-nl.facebook.com/groups/54131394964/"}
             />
