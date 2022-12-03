@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemIcon,
   RegularBreakpoints,
+  Stack,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -21,7 +22,6 @@ import castrationContentTable from "../CastrationPage/content-table";
 import straycatsContentTable from "../StrayCatsPage/content-table";
 import introducingCatsContentTable from "../IntroducingCatsPage/content-table";
 import LinkIconBtn from "../../components/LinkIconBtn";
-import { useEffect, useState } from "react";
 
 const TileWho = (
   <Tile>
@@ -50,8 +50,8 @@ const Banner = (() => {
         margin: 0,
         padding: 0,
       }}
-      alt="Banner"
-      src="/images/banner.jpg"
+      alt="2 katten in een boom"
+      src="/images/koala-katjes.jpg"
     />
   );
 
@@ -76,17 +76,38 @@ const Banner = (() => {
 
 const TileDinnerparty = (
   <Tile>
-    <TileHeader title={"Eetfestijn op 27/11/2022"} />
+    <TileHeader title={"Eetfestijn van 27/11/2022"} />
     <TileContent>
-      <Box
-        component="img"
-        sx={{
-          width: "100%",
-          height: "auto",
-        }}
-        alt="Eetfestijn op 27/11/2022"
-        src="/images/IMG-20220822-WA0001.jpg"
-      />
+      <Typography variant="subtitle1" gutterBottom>
+        Eetfestijn Operatie Zwerfkat is geslaagd !<br></br>
+        Met dank aan alle gasten en de helpers !
+      </Typography>
+      <Stack direction="column" spacing={5}>
+        <Stack direction="row" spacing={0}>
+          <Box
+            component="img"
+            sx={{
+              width: "50%",
+              height: "auto",
+            }}
+            alt="Eetfestijn van 27/11/2022"
+            src="/images/IMG-20220822-WA0001.jpg"
+          />
+          <Box
+            component="img"
+            sx={{
+              width: "50%",
+              height: "auto",
+            }}
+            alt="Dank u"
+            src="/images/thank_you.jpg"
+          />
+        </Stack>
+        <Typography variant="body2" gutterBottom>
+          Vanwege het organisatiecomité : Angelique, Verda, Margot, Els en
+          Monika.
+        </Typography>
+      </Stack>
     </TileContent>
   </Tile>
 );
@@ -97,7 +118,10 @@ const TileCastratie = (() => {
   return (
     <Tile>
       <TileHeader title={"Castratie van katten"} />
-      <TileMedia img={"/images/schaar.jpg"} alt={"Castratieschaar"} />
+      <TileMedia
+        img={"/images/it-is-a-boy.jpg"}
+        alt={"Dierenarts die een kater vasthoudt"}
+      />
       <TileContent>
         <DocTeaser docUrl={docUrl} contentTable={castrationContentTable}>
           Naast de wettelijke verplichting zijn er talrijke voordelen om katten,
@@ -161,7 +185,7 @@ const TileStrayCats = (() => {
   return (
     <Tile>
       <TileHeader title={"Zwerfkatten in uw tuin"} />
-      <TileMedia img={"/images/stray-cats.jpg"} alt={"Zwerfkatten"} />
+      <TileMedia img={"/images/20210303_154522.jpg"} alt={"Zwerfkatten"} />
       <TileContent>
         <DocTeaser docUrl={docUrl} contentTable={straycatsContentTable}>
           Zwerfkatten in uw tuin. Wat nu ?
@@ -179,7 +203,7 @@ const TileCatsIntroduction = (() => {
     <Tile>
       <TileHeader title={"Katten introduceren"} />
       <TileMedia
-        img={"/images/cats_together.jpg"}
+        img={"/images/20171007_162800.jpg"}
         alt={"Katten introduceren"}
       />
       <TileContent>
@@ -216,8 +240,8 @@ const HomePage = () => {
   const tiles: [JSX.Element, RegularBreakpoints][] = [
     [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
     [TileWhat, { xs: 1, sm: 2, lg: 2 }],
-    [TileCastratie, { xs: 1 }],
     [TileStrayCats, { xs: 1 }],
+    [TileCastratie, { xs: 1 }],
     [TileCatsIntroduction, { xs: 1 }],
     [TileUnderContruction, { xs: 1 }],
   ];

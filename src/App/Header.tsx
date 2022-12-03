@@ -4,11 +4,10 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
-import ToggleThemeMode from "../components/ToggleThemeMode";
 import {
   useHambugerMode,
   useSetSidebarOpen,
-} from "../contexts/Theme2NavContent";
+} from "../contexts/HamburgerContent";
 import LinkIconBtn from "../components/LinkIconBtn";
 
 const Header = () => {
@@ -19,7 +18,7 @@ const Header = () => {
     <AppBar position="sticky" sx={{ backgroundColor: "sbBgColor" }}>
       <Toolbar color="transparent">
         <Typography variant="h4" component="span" sx={{ flexGrow: 1 }}>
-          Operatie Zwerfkat
+          vzw Operatie Zwerfkat Oudenaarde
         </Typography>
 
         <Stack direction="row" spacing={4}>
@@ -45,7 +44,6 @@ const Header = () => {
               href={"https://nl-nl.facebook.com/groups/54131394964/"}
             />
           </Stack>
-          <ToggleThemeMode />
           {hambugerMode && (
             <IconButton
               color="inherit"

@@ -1,10 +1,11 @@
 import { lazy } from "react";
-import { CssBaseline, Box, Container } from "@mui/material";
+import { CssBaseline, Box, Container, colors } from "@mui/material";
 import {
-  ThemeProvider,
-  Theme2NavProvider,
-  LazyRoutesProvider,
-} from "../contexts";
+  ThemeProvider as MuiThemeProvider,
+  Theme,
+  createTheme,
+} from "@mui/material/styles";
+import { HamburgerProvider, LazyRoutesProvider } from "../contexts";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
@@ -16,6 +17,123 @@ const StrayCatsPage = lazy(() => import("../pages/StrayCatsPage"));
 const IntroducingCatsPage = lazy(() => import("../pages/IntroducingCatsPage"));
 
 const Error404Page = lazy(() => import("../pages/Error404Page"));
+
+const lightTheme = (() => {
+  const primaryFamily = colors.amber;
+  const secondaryFamily = colors.lightBlue;
+  const backgroundFamily = colors.amber;
+
+  const cardActionsOnBottom = (t: Theme) => {
+    return createTheme(t, {
+      components: {
+        MuiCard: {
+          styleOverrides: {
+            root: {
+              display: "flex",
+              flexDirection: "column",
+            },
+          },
+        },
+        MuiCardContent: {
+          styleOverrides: {
+            root: {
+              flexGrow: 1,
+            },
+          },
+        },
+      },
+    });
+  };
+
+  const primaryPalette = (t: Theme) => {
+    return createTheme(t, {
+      palette: {
+        primary: {
+          light: primaryFamily[200],
+          main: primaryFamily[300],
+          dark: primaryFamily[500],
+          contrastText: "#222",
+        },
+      },
+    });
+  };
+  const secondaryPalette = (t: Theme) => {
+    return createTheme(t, {
+      palette: {
+        secondary: {
+          light: secondaryFamily[300],
+          main: secondaryFamily[500],
+          dark: secondaryFamily[700],
+          contrastText: "#222",
+        },
+      },
+    });
+  };
+  const backgroundPalette = (t: Theme) => {
+    return createTheme(t, {
+      palette: {
+        background: {
+          //          default: colors.grey[600],
+          default: backgroundFamily[200],
+        },
+      },
+    });
+  };
+
+  // const changeBgOfDrawer = (t: Theme) => {
+  //   return createTheme(t, {
+  //     components: {
+  //       MuiDrawer: {
+  //         styleOverrides: {
+  //           paper: {
+  //             bgcolor: t.palette.primary.dark,
+  //           },
+  //         },
+  //       },
+  //     },
+  //   });
+  // };
+
+  const sbBgColor = (t: Theme) => {
+    return createTheme(t, {
+      palette: {
+        sbBgColor: t.palette.primary.dark,
+      },
+    });
+  };
+
+  const hoverMuiListItemButton = (t: Theme) => {
+    return createTheme(t, {
+      components: {
+        MuiListItem: {
+          styleOverrides: {
+            root: {
+              "&.MuiListItem-button:hover": {
+                backgroundColor: t.palette.grey[500],
+              },
+            },
+          },
+        },
+      },
+    });
+  };
+
+  return [
+    cardActionsOnBottom,
+    primaryPalette,
+    secondaryPalette,
+    backgroundPalette,
+    sbBgColor,
+    hoverMuiListItemButton,
+  ].reduce(
+    (rc, one) => one(rc),
+    createTheme({
+      palette: {
+        mode: "light",
+      },
+    })
+  );
+})();
 
 const Content = () => {
   return (
@@ -81,12 +199,12 @@ const App = () => {
 
   return (
     <LazyRoutesProvider lazyRoutes={lazyRoutes}>
-      <ThemeProvider>
-        <Theme2NavProvider>
+      <MuiThemeProvider theme={lightTheme}>
+        <HamburgerProvider>
           <CssBaseline />
           <Content />
-        </Theme2NavProvider>
-      </ThemeProvider>
+        </HamburgerProvider>
+      </MuiThemeProvider>
     </LazyRoutesProvider>
   );
 };

@@ -12,7 +12,7 @@ const HambugerModeContext = createContext(false);
 const SidebarOpenContext = createContext(false);
 const SetSidebarOpenContext = createContext((open: boolean) => {});
 
-export const Theme2NavProvider = ({ children }: { children: ReactNode }) => {
+export const HamburgerProvider = ({ children }: { children: ReactNode }) => {
   const theme = useTheme();
   const hamburgerMode = useMediaQuery(theme.breakpoints.down("md"));
   const [sidebarOpen, setSidebarOpen] = useState(false);
