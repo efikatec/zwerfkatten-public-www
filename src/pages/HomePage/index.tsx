@@ -7,6 +7,7 @@ import {
   ListItemIcon,
   RegularBreakpoints,
   Stack,
+  Grow,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -238,6 +239,7 @@ const TileUnderContruction = (
 
 const HomePage = () => {
   const tiles: [JSX.Element, RegularBreakpoints][] = [
+    [Banner, { xs: 1, sm: 2, lg: 3 }],
     [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
     [TileWhat, { xs: 1, sm: 2, lg: 2 }],
     [TileStrayCats, { xs: 1 }],
@@ -245,7 +247,6 @@ const HomePage = () => {
     [TileCatsIntroduction, { xs: 1 }],
     [TileUnderContruction, { xs: 1 }],
   ];
-
   return (
     <Grid
       container
@@ -256,14 +257,12 @@ const HomePage = () => {
       }}
       columns={{ xs: 1, sm: 2, lg: 3 }}
     >
-      <Grid item xs={2} sm={2} lg={3}>
-        {Banner}
-      </Grid>
-
       {tiles.map((one, index) => (
-        <Grid item key={index} {...one[1]}>
-          {one[0]}
-        </Grid>
+        <Grow key={index} in={true} timeout={1000}>
+          <Grid item {...one[1]}>
+            {one[0]}
+          </Grid>
+        </Grow>
       ))}
     </Grid>
   );

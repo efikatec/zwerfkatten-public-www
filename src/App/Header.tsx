@@ -24,9 +24,9 @@ const Header = () => {
         <Stack direction="row" spacing={4}>
           <Stack direction="row" spacing={0}>
             <LinkIconBtn
-              tooltip={"Een email sturen naar monika.sormann@telenet.be"}
+              tooltip={"Een email sturen naar bestuur@operatiezwerfkat.be"}
               icon={<MailOutlineIcon />}
-              href={"mailto:monika.sormann@telenet.be"}
+              href={"mailto:bestuur@operatiezwerfkat.be"}
             />
             <LinkIconBtn
               tooltip={"Sms sturen naar Monika op +32 477 270 753"}

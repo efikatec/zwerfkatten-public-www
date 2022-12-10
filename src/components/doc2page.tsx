@@ -7,6 +7,7 @@ import {
   List,
   ListItem,
   ListItemIcon,
+  Grow,
 } from "@mui/material";
 // import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -120,9 +121,11 @@ const Doc2Page = ({
       <Typography variant="h2" component="h4" color="text.primary" gutterBottom>
         {contentTable.title}
       </Typography>
-      <Stack direction="column" spacing={4}>
-        {chapters}
-      </Stack>
+      <Grow in={true} timeout={500}>
+        <Stack direction="column" spacing={4}>
+          {chapters}
+        </Stack>
+      </Grow>
     </Paper>
   );
 };
