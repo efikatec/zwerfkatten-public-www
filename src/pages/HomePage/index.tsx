@@ -8,6 +8,15 @@ import {
   RegularBreakpoints,
   Stack,
   Grow,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Card,
+  CardContent,
+  CardMedia,
+  Link,
+  Tooltip,
+  IconButton,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -23,6 +32,118 @@ import castrationContentTable from "../CastrationPage/content-table";
 import straycatsContentTable from "../StrayCatsPage/content-table";
 import introducingCatsContentTable from "../IntroducingCatsPage/content-table";
 import LinkIconBtn from "../../components/LinkIconBtn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import PlaceIcon from "@mui/icons-material/Place";
+
+const PersonCard = (props: {
+  name: string;
+  img: string;
+  tel: string;
+  description: string;
+}) => {
+  return (
+    <Card sx={{ display: "flex", flexDirection: "row" }}>
+      {/* <CardMedia
+        component="img"
+        sx={{ width: 80, objectFit: "contain" }}
+        image={props.img}
+        alt="avatar"
+      /> */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+        }}
+      >
+        <CardContent sx={{ flex: "1 0 auto" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography component="div" variant="h5">
+              {props.name}
+            </Typography>
+            <LinkIconBtn
+              tooltip={props.tel}
+              icon={<PhoneIcon />}
+              href={["tel", props.tel.replaceAll(" ", "")].join(":")}
+            />
+          </Box>
+          <Typography
+            variant="subtitle1"
+            color="text.secondary"
+            component="div"
+          >
+            {props.description}
+          </Typography>
+        </CardContent>
+      </Box>
+    </Card>
+  );
+};
+
+const VetCard = (props: {
+  name: string;
+  img: string;
+  url: string;
+  map: string;
+}) => {
+  return (
+    <Card
+      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <CardMedia
+        component="img"
+        sx={{ height: 120, objectFit: "contain" }}
+        image={props.img}
+        alt="avatar"
+      />
+      <CardContent sx={{ flex: "1 0 auto" }}>
+        <Stack
+          direction={"column"}
+          sx={{
+            width: "100%",
+          }}
+        >
+          <Stack direction={"row"}>
+            <Link
+              component="a"
+              target="_blank"
+              rel="noreferrer"
+              href={props.url}
+              underline="hover"
+              variant="body1"
+              color="text.primary"
+              sx={{ whiteSpace: "nowrap" }}
+            >
+              <Typography component="div" variant="h5">
+                {props.name}
+              </Typography>
+            </Link>
+
+            <Link
+              component="a"
+              target="_blank"
+              rel="noreferrer"
+              href={props.map}
+              underline="hover"
+              variant="body1"
+              color="text.primary"
+              sx={{ whiteSpace: "nowrap" }}
+            >
+              <IconButton color="inherit">{<PlaceIcon />}</IconButton>
+            </Link>
+          </Stack>
+        </Stack>
+      </CardContent>
+    </Card>
+  );
+};
 
 const TileWho = (
   <Tile>
@@ -36,6 +157,60 @@ const TileWho = (
         <big>Oudenaarde</big>
       </b>
       . Daardoor blijft aan veel katten en kitten angst en leed bespaard.
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography>Ons bestuur</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Stack spacing={2}>
+            <PersonCard
+              name="Monika"
+              img="/images/cat-looking.jpg"
+              tel="+32 477 270 753"
+              description="Oprichter en voorzitter, administrator, beleidsvragen, vangacties, opvang voor adopties"
+            />
+            <PersonCard
+              name="Angelique"
+              img="/images/cat-looking.jpg"
+              tel="+32 478 593 572"
+              description="Bestuurslid en secretaris, fondsenwerving (eetfestijn, paaseieren)"
+            />
+            <PersonCard
+              name="Verda"
+              img="/images/cat-looking.jpg"
+              tel="+32 497 506 336"
+              description="Bestuurslid, fondsenwerving (eetfestijn, paaseieren)"
+            />
+            <PersonCard
+              name="Dirk"
+              img="/images/cat-looking.jpg"
+              tel="+32 474 990 121"
+              description="Coördinator gastgezinnen"
+            />
+          </Stack>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography>Onze dierenartsen</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Stack spacing={2}>
+            <VetCard
+              name="Crius Dierenartsen"
+              img="/images/crus.png"
+              url="https://www.crius-dierenartsen.be/"
+              map="https://goo.gl/maps/64i8euxreiuEAYcr6"
+            />
+            <VetCard
+              name="Dierenarts De Temmerman"
+              img="/images/dierenarts-de-temmerman.png"
+              url="http://www.dierenartsoudenaarde.be/"
+              map="https://goo.gl/maps/7EaYPh5r2DuUK4Nf7"
+            />
+          </Stack>
+        </AccordionDetails>
+      </Accordion>
     </TileContent>
   </Tile>
 );
@@ -74,6 +249,23 @@ const Banner = (() => {
     </Grid>
   );
 })();
+
+const TileWishes2023 = (
+  <Tile>
+    <TileHeader title={"Beste wensen voor 2023"} />
+    <TileContent>
+      <Box
+        component="img"
+        sx={{
+          width: "100%",
+          height: "auto",
+        }}
+        alt="Beste wensen voor 2023"
+        src="/images/wensen-2023.jpg"
+      />
+    </TileContent>
+  </Tile>
+);
 
 const TileDinnerparty = (
   <Tile>
@@ -240,6 +432,7 @@ const TileUnderContruction = (
 const HomePage = () => {
   const tiles: [JSX.Element, RegularBreakpoints][] = [
     [Banner, { xs: 1, sm: 2, lg: 3 }],
+    [TileWishes2023, { xs: 1, sm: 2, lg: 1 }],
     [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
     [TileWhat, { xs: 1, sm: 2, lg: 2 }],
     [TileStrayCats, { xs: 1 }],

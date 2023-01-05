@@ -54,8 +54,8 @@ const chaptersContent: IChaptersContent = {
       Alle katten die verkocht of weggeven worden, moeten vooraf gecastreerd en
       gechipt worden.
       <br />
-      Vanaf 1 april 2018 moeten alle klibraryatten die geboren zijn na
-      31/03/2017 gecastreerd en gechipt worden.
+      Vanaf 1 april 2018 moeten alle katten van eigenaars die geboren zijn na
+      31/03/2014 gecastreerd en gechipt worden.
     </Paragraph>
   ),
   a702f2fa: (
