@@ -197,16 +197,16 @@ const TileWho = (
         <AccordionDetails>
           <Stack spacing={2}>
             <VetCard
-              name="Crius Dierenartsen"
-              img="/images/crus.png"
-              url="https://www.crius-dierenartsen.be/"
-              map="https://goo.gl/maps/64i8euxreiuEAYcr6"
-            />
-            <VetCard
               name="Dierenarts De Temmerman"
               img="/images/dierenarts-de-temmerman.png"
               url="http://www.dierenartsoudenaarde.be/"
               map="https://goo.gl/maps/7EaYPh5r2DuUK4Nf7"
+            />
+            <VetCard
+              name="Crius Dierenartsen"
+              img="/images/crus.png"
+              url="https://www.crius-dierenartsen.be/"
+              map="https://goo.gl/maps/64i8euxreiuEAYcr6"
             />
           </Stack>
         </AccordionDetails>
