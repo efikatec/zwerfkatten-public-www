@@ -15,7 +15,6 @@ import {
   CardContent,
   CardMedia,
   Link,
-  Tooltip,
   IconButton,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
@@ -36,10 +35,51 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import PlaceIcon from "@mui/icons-material/Place";
 
+function LinkPhoneBtn(props: { tel: string; putCaption?: boolean }) {
+  const enrichtedProps = {
+    putCaption: true,
+    ...props,
+    internationNbr: ["+32", props.tel.slice(1)].join(" ").replaceAll(" ", ""),
+  };
+
+  return (
+    <>
+      <LinkIconBtn
+        tooltip={enrichtedProps.tel}
+        icon={<PhoneIcon />}
+        href={["tel", enrichtedProps.internationNbr.replaceAll(" ", "")].join(
+          ":"
+        )}
+      />
+      {enrichtedProps.putCaption && (
+        <Typography component="span" variant="inherit">
+          {["(", enrichtedProps.tel, ")"].join("")}
+        </Typography>
+      )}
+    </>
+  );
+}
+
+function LinkMonikaPhoneBtn() {
+  return <LinkPhoneBtn tel="0477 270 753" />;
+}
+
+function LinkAngeliquePhoneBtn() {
+  return <LinkPhoneBtn tel="0478 593 572" />;
+}
+
+function LinkVerdaPhoneBtn() {
+  return <LinkPhoneBtn tel="0497 506 336" />;
+}
+
+function LinkDirkPhoneBtn() {
+  return <LinkPhoneBtn tel="0474 990 121" />;
+}
+
 const PersonCard = (props: {
   name: string;
   img: string;
-  tel: string;
+  PhoneLink: JSX.Element;
   description: string;
 }) => {
   return (
@@ -68,11 +108,8 @@ const PersonCard = (props: {
             <Typography component="div" variant="h5">
               {props.name}
             </Typography>
-            <LinkIconBtn
-              tooltip={props.tel}
-              icon={<PhoneIcon />}
-              href={["tel", props.tel.replaceAll(" ", "")].join(":")}
-            />
+
+            {props.PhoneLink}
           </Box>
           <Typography
             variant="subtitle1"
@@ -166,25 +203,25 @@ const TileWho = (
             <PersonCard
               name="Monika"
               img="/images/cat-looking.jpg"
-              tel="+32 477 270 753"
+              PhoneLink={<LinkMonikaPhoneBtn />}
               description="Oprichter en voorzitter, administrator, beleidsvragen, vangacties, opvang voor adopties"
             />
             <PersonCard
               name="Angelique"
               img="/images/cat-looking.jpg"
-              tel="+32 478 593 572"
+              PhoneLink={<LinkAngeliquePhoneBtn />}
               description="Bestuurslid en secretaris, fondsenwerving (eetfestijn, paaseieren)"
             />
             <PersonCard
               name="Verda"
               img="/images/cat-looking.jpg"
-              tel="+32 497 506 336"
+              PhoneLink={<LinkVerdaPhoneBtn />}
               description="Bestuurslid, fondsenwerving (eetfestijn, paaseieren)"
             />
             <PersonCard
               name="Dirk"
               img="/images/cat-looking.jpg"
-              tel="+32 474 990 121"
+              PhoneLink={<LinkDirkPhoneBtn />}
               description="Coördinator gastgezinnen"
             />
           </Stack>
@@ -250,9 +287,26 @@ const Banner = (() => {
   );
 })();
 
-const TileWishes2023 = (
+// const TileWishes2023 = (
+//   <Tile>
+//     <TileHeader title={"Beste wensen voor 2023"} />
+//     <TileContent>
+//       <Box
+//         component="img"
+//         sx={{
+//           width: "100%",
+//           height: "auto",
+//         }}
+//         alt="Beste wensen voor 2023"
+//         src="/images/wensen-2023.jpg"
+//       />
+//     </TileContent>
+//   </Tile>
+// );
+
+const TileEaster = (
   <Tile>
-    <TileHeader title={"Beste wensen voor 2023"} />
+    <TileHeader title={"Lekkere paaseieren te koop"} />
     <TileContent>
       <Box
         component="img"
@@ -260,9 +314,61 @@ const TileWishes2023 = (
           width: "100%",
           height: "auto",
         }}
-        alt="Beste wensen voor 2023"
-        src="/images/wensen-2023.jpg"
+        alt="Lekkere paaseieren te koop"
+        src="/images/happy-easter-images-download.jpg"
       />
+      <Typography variant="subtitle1" gutterBottom>
+        Pasen nadert en er zijn weer lekkere paaseieren te koop t.v.v. de
+        zwerfkatten. <br></br>
+        200 gr gevulde choco eitjes fondant, wit en melk praliné voor 5 euro.
+        <br></br>
+        Je kan ze afhalen/bestellen bij:
+        <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
+          {[
+            {
+              name: "Verda",
+              lnk: LinkVerdaPhoneBtn,
+            },
+            {
+              name: "Monika",
+              lnk: LinkMonikaPhoneBtn,
+            },
+            {
+              name: "Angelique",
+              lnk: LinkAngeliquePhoneBtn,
+            },
+          ].map((one, index) => (
+            <ListItem key={index} dense>
+              <ListItemIcon sx={{ minWidth: 0 }}>
+                <ArrowRightIcon />
+              </ListItemIcon>
+              {one.name}
+              {<one.lnk />}
+            </ListItem>
+          ))}
+        </List>
+        Meerdere zakjes kunnen we wel aan huis brengen. Vanaf aankoop van 15
+        zakjes is een zakje gratis!
+        <br></br>
+        <br></br>
+        <Typography paragraph variant="body1">
+          Ieder Euro die we hier aan verdienen zal welbesteed worden, zoals
+          vorig jaar
+          <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
+            {[
+              "rond € 7.000 aan voeding",
+              "meer dan € 11.000 voor medicatie en behandelingen en operaties",
+            ].map((one, index) => (
+              <ListItem key={index} dense>
+                <ListItemIcon sx={{ minWidth: 0 }}>
+                  <ArrowRightIcon />
+                </ListItemIcon>
+                {one}
+              </ListItem>
+            ))}
+          </List>
+        </Typography>
+      </Typography>
     </TileContent>
   </Tile>
 );
@@ -431,8 +537,9 @@ const TileUnderContruction = (
 
 const HomePage = () => {
   const tiles: [JSX.Element, RegularBreakpoints][] = [
+    [TileEaster, { xs: 1, sm: 2, lg: 3 }],
     [Banner, { xs: 1, sm: 2, lg: 3 }],
-    [TileWishes2023, { xs: 1, sm: 2, lg: 1 }],
+    // [TileWishes2023, { xs: 1, sm: 2, lg: 1 }],
     [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
     [TileWhat, { xs: 1, sm: 2, lg: 2 }],
     [TileStrayCats, { xs: 1 }],
