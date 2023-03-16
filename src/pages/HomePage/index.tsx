@@ -315,7 +315,8 @@ const TileEaster = (
           height: "auto",
         }}
         alt="Lekkere paaseieren te koop"
-        src="/images/happy-easter-images-download.jpg"
+        src="/images/paaseieren.jpg"
+        // src="/images/happy-easter-images-download.jpg"
       />
       <Typography variant="subtitle1" gutterBottom>
         Pasen nadert en er zijn weer lekkere paaseieren te koop t.v.v. de
@@ -354,6 +355,8 @@ const TileEaster = (
         <Typography paragraph variant="body1">
           Ieder Euro die we hier aan verdienen zal welbesteed worden, zoals
           vorig jaar
+        </Typography>
+        {
           <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
             {[
               "rond € 7.000 aan voeding",
@@ -367,7 +370,7 @@ const TileEaster = (
               </ListItem>
             ))}
           </List>
-        </Typography>
+        }
       </Typography>
     </TileContent>
   </Tile>

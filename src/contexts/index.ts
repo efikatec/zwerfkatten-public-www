@@ -1,2 +1,2 @@
-export * from "./HamburgerContent";
-export * from "./LazyRoutesContent";
+export * from "./HamburgerContext";
+export * from "./LazyRoutesContext";
