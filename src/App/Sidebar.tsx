@@ -4,7 +4,7 @@ import {
   useHambugerMode,
   useSidebarOpen,
   useSetSidebarOpen,
-} from "../contexts/HamburgerContext";
+} from "../contexts/hamburgerContext";
 import Nav from "./Nav";
 
 const SlidingSidebar = () => {

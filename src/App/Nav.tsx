@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Typography, List, ListItem } from "@mui/material";
-import { useSetSidebarOpen } from "../contexts/HamburgerContext";
+import { useSetSidebarOpen } from "../contexts/hamburgerContext";
 import { useLazyRoutes } from "../contexts";
 
 interface ILinkBtnProps {

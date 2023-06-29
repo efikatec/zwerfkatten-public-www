@@ -7,7 +7,7 @@ import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
 import {
   useHambugerMode,
   useSetSidebarOpen,
-} from "../contexts/HamburgerContext";
+} from "../contexts/hamburgerContext";
 import LinkIconBtn from "../components/LinkIconBtn";
 
 const Header = () => {

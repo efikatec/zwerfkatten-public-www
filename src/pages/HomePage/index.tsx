@@ -72,7 +72,7 @@ function LinkVerdaPhoneBtn() {
   return <LinkPhoneBtn tel="0497 506 336" />;
 }
 
-function LinkDirkPhoneBtn() {
+function LinkKurtPhoneBtn() {
   return <LinkPhoneBtn tel="0474 990 121" />;
 }
 
@@ -219,9 +219,9 @@ const TileWho = (
               description="Bestuurslid, fondsenwerving (eetfestijn, paaseieren)"
             />
             <PersonCard
-              name="Dirk"
+              name="Kurt"
               img="/images/cat-looking.jpg"
-              PhoneLink={<LinkDirkPhoneBtn />}
+              PhoneLink={<LinkKurtPhoneBtn />}
               description="Coördinator gastgezinnen"
             />
           </Stack>
@@ -304,77 +304,77 @@ const Banner = (() => {
 //   </Tile>
 // );
 
-const TileEaster = (
-  <Tile>
-    <TileHeader title={"Lekkere paaseieren te koop"} />
-    <TileContent>
-      <Box
-        component="img"
-        sx={{
-          width: "100%",
-          height: "auto",
-        }}
-        alt="Lekkere paaseieren te koop"
-        src="/images/paaseieren.jpg"
-        // src="/images/happy-easter-images-download.jpg"
-      />
-      <Typography variant="subtitle1" gutterBottom>
-        Pasen nadert en er zijn weer lekkere paaseieren te koop t.v.v. de
-        zwerfkatten. <br></br>
-        200 gr gevulde choco eitjes fondant, wit en melk praliné voor 5 euro.
-        <br></br>
-        Je kan ze afhalen/bestellen bij:
-        <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
-          {[
-            {
-              name: "Verda",
-              lnk: LinkVerdaPhoneBtn,
-            },
-            {
-              name: "Monika",
-              lnk: LinkMonikaPhoneBtn,
-            },
-            {
-              name: "Angelique",
-              lnk: LinkAngeliquePhoneBtn,
-            },
-          ].map((one, index) => (
-            <ListItem key={index} dense>
-              <ListItemIcon sx={{ minWidth: 0 }}>
-                <ArrowRightIcon />
-              </ListItemIcon>
-              {one.name}
-              {<one.lnk />}
-            </ListItem>
-          ))}
-        </List>
-        Meerdere zakjes kunnen we wel aan huis brengen. Vanaf aankoop van 15
-        zakjes is een zakje gratis!
-        <br></br>
-        <br></br>
-        <Typography paragraph variant="body1">
-          Ieder Euro die we hier aan verdienen zal welbesteed worden, zoals
-          vorig jaar
-        </Typography>
-        {
-          <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
-            {[
-              "rond € 7.000 aan voeding",
-              "meer dan € 11.000 voor medicatie en behandelingen en operaties",
-            ].map((one, index) => (
-              <ListItem key={index} dense>
-                <ListItemIcon sx={{ minWidth: 0 }}>
-                  <ArrowRightIcon />
-                </ListItemIcon>
-                {one}
-              </ListItem>
-            ))}
-          </List>
-        }
-      </Typography>
-    </TileContent>
-  </Tile>
-);
+// const TileEaster = (
+//   <Tile>
+//     <TileHeader title={"Lekkere paaseieren te koop"} />
+//     <TileContent>
+//       <Box
+//         component="img"
+//         sx={{
+//           width: "100%",
+//           height: "auto",
+//         }}
+//         alt="Lekkere paaseieren te koop"
+//         src="/images/paaseieren.jpg"
+//         // src="/images/happy-easter-images-download.jpg"
+//       />
+//       <Typography variant="subtitle1" gutterBottom>
+//         Pasen nadert en er zijn weer lekkere paaseieren te koop t.v.v. de
+//         zwerfkatten. <br></br>
+//         200 gr gevulde choco eitjes fondant, wit en melk praliné voor 5 euro.
+//         <br></br>
+//         Je kan ze afhalen/bestellen bij:
+//         <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
+//           {[
+//             {
+//               name: "Verda",
+//               lnk: LinkVerdaPhoneBtn,
+//             },
+//             {
+//               name: "Monika",
+//               lnk: LinkMonikaPhoneBtn,
+//             },
+//             {
+//               name: "Angelique",
+//               lnk: LinkAngeliquePhoneBtn,
+//             },
+//           ].map((one, index) => (
+//             <ListItem key={index} dense>
+//               <ListItemIcon sx={{ minWidth: 0 }}>
+//                 <ArrowRightIcon />
+//               </ListItemIcon>
+//               {one.name}
+//               {<one.lnk />}
+//             </ListItem>
+//           ))}
+//         </List>
+//         Meerdere zakjes kunnen we wel aan huis brengen. Vanaf aankoop van 15
+//         zakjes is een zakje gratis!
+//         <br></br>
+//         <br></br>
+//         <Typography paragraph variant="body1">
+//           Ieder Euro die we hier aan verdienen zal welbesteed worden, zoals
+//           vorig jaar
+//         </Typography>
+//         {
+//           <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
+//             {[
+//               "rond € 7.000 aan voeding",
+//               "meer dan € 11.000 voor medicatie en behandelingen en operaties",
+//             ].map((one, index) => (
+//               <ListItem key={index} dense>
+//                 <ListItemIcon sx={{ minWidth: 0 }}>
+//                   <ArrowRightIcon />
+//                 </ListItemIcon>
+//                 {one}
+//               </ListItem>
+//             ))}
+//           </List>
+//         }
+//       </Typography>
+//     </TileContent>
+//   </Tile>
+// );
 
 const TileDinnerparty = (
   <Tile>
@@ -540,7 +540,7 @@ const TileUnderContruction = (
 
 const HomePage = () => {
   const tiles: [JSX.Element, RegularBreakpoints][] = [
-    [TileEaster, { xs: 1, sm: 2, lg: 3 }],
+    // [TileEaster, { xs: 1, sm: 2, lg: 3 }],
     [Banner, { xs: 1, sm: 2, lg: 3 }],
     // [TileWishes2023, { xs: 1, sm: 2, lg: 1 }],
     [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
