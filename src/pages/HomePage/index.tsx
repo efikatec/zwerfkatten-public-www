@@ -375,44 +375,49 @@ const Banner = (() => {
 //     </TileContent>
 //   </Tile>
 // );
+//
 
 const TileDinnerparty = (
   <Tile>
-    <TileHeader title={"Eetfestijn van 27/11/2022"} />
+    <TileHeader title={"Eetfestijn op 26/11/2023"} />
     <TileContent>
-      <Typography variant="subtitle1" gutterBottom>
-        Eetfestijn Operatie Zwerfkat is geslaagd !<br></br>
-        Met dank aan alle gasten en de helpers !
-      </Typography>
       <Stack direction="column" spacing={5}>
         <Stack direction="row" spacing={0}>
           <Box
             component="img"
             sx={{
-              width: "50%",
+              width: "100%",
               height: "auto",
             }}
-            alt="Eetfestijn van 27/11/2022"
-            src="/images/IMG-20220822-WA0001.jpg"
-          />
-          <Box
-            component="img"
-            sx={{
-              width: "50%",
-              height: "auto",
-            }}
-            alt="Dank u"
-            src="/images/thank_you.jpg"
+            alt="Eetfestijn van 26/11/2023"
+            src="/images/eetfestijn-2023.png"
           />
         </Stack>
-        <Typography variant="body2" gutterBottom>
-          Vanwege het organisatiecomité : Angelique, Verda, Margot, Els en
-          Monika.
-        </Typography>
       </Stack>
     </TileContent>
   </Tile>
 );
+
+// const TileExposition = (
+//   <Tile>
+//     <TileHeader title={"Eetfestijn op 26/11/2023"} />
+//     <TileContent>
+//       <Stack direction="column" spacing={5}>
+//         <Stack direction="row" spacing={0}>
+//           <Box
+//             component="img"
+//             sx={{
+//               width: "100%",
+//               height: "auto",
+//             }}
+//             alt="Eetfestijn van 26/11/2023"
+//             src="/images/tentoonstelling.pdf"
+//           />
+//         </Stack>
+//       </Stack>
+//     </TileContent>
+//   </Tile>
+// );
 
 const TileCastratie = (() => {
   const docUrl = "/castration";
@@ -543,6 +548,7 @@ const HomePage = () => {
     // [TileEaster, { xs: 1, sm: 2, lg: 3 }],
     [Banner, { xs: 1, sm: 2, lg: 3 }],
     // [TileWishes2023, { xs: 1, sm: 2, lg: 1 }],
+    // [TileExposition, { xs: 1, sm: 2, lg: 3 }],
     [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
     [TileWhat, { xs: 1, sm: 2, lg: 2 }],
     [TileStrayCats, { xs: 1 }],
