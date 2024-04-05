@@ -15,6 +15,7 @@ const HomePage = lazy(() => import("../pages/HomePage"));
 const CastrationPage = lazy(() => import("../pages/CastrationPage"));
 const StrayCatsPage = lazy(() => import("../pages/StrayCatsPage"));
 const IntroducingCatsPage = lazy(() => import("../pages/IntroducingCatsPage"));
+const TwentyYearsPage = lazy(() => import("../pages/TwentyYearsPage"));
 
 const Error404Page = lazy(() => import("../pages/Error404Page"));
 
@@ -190,6 +191,11 @@ const App = () => {
       text: "Katten Introduceren",
       path: "/introducing-cats",
       Page: IntroducingCatsPage,
+    },
+    {
+      text: "20 jaar bestaan",
+      path: "/twenty-years-page",
+      Page: TwentyYearsPage,
     },
     {
       path: "*",

@@ -1,6 +1,10 @@
+import { SxProps } from "@mui/material";
+import { Theme } from "@mui/system";
 import { PropsWithChildren } from "react";
 
-export type IParagraph = PropsWithChildren<{}>;
+export type IParagraph = PropsWithChildren<{
+  sx?: SxProps<Theme>;
+}>;
 
 export interface IChapterTitle {
   id: string;

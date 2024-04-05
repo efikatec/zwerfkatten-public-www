@@ -24,5 +24,6 @@ sitemap.write("/");
 sitemap.write("/castration");
 sitemap.write("/stray-cats");
 sitemap.write("/introducing-cats");
+sitemap.write("/twenty-years-page");
 
 sitemap.end();
