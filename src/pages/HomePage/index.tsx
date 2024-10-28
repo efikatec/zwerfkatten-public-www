@@ -600,26 +600,26 @@ const BannerWho = (() => {
 // );
 //
 
-// const TileDinnerparty = (
-//   <Tile>
-//     <TileHeader title={"Eetfestijn op 26/11/2023"} />
-//     <TileContent>
-//       <Stack direction="column" spacing={5}>
-//         <Stack direction="row" spacing={0}>
-//           <Box
-//             component="img"
-//             sx={{
-//               width: "100%",
-//               height: "auto",
-//             }}
-//             alt="Eetfestijn van 26/11/2023"
-//             src="/images/eetfestijn-2023.png"
-//           />
-//         </Stack>
-//       </Stack>
-//     </TileContent>
-//   </Tile>
-// );
+const TileDinnerparty = (
+  <Tile>
+    <TileHeader title={"Eetfestijn op 24/11/2024"} />
+    <TileContent>
+      <Stack direction="column" spacing={5}>
+        <Stack direction="row" spacing={0}>
+          <Box
+            component="img"
+            sx={{
+              width: "100%",
+              height: "auto",
+            }}
+            alt="Eetfestijn van 24/11/2024"
+            src="/images/eetfestijn-2024.jpg"
+          />
+        </Stack>
+      </Stack>
+    </TileContent>
+  </Tile>
+);
 
 const TileTwentyYears = (() => {
   const docUrl = "/twenty-years-page";
@@ -871,7 +871,7 @@ const HomePage = () => {
     [BannerWho, { xs: 1, sm: 2, lg: 3 }],
     // [TileWishes2023, { xs: 1, sm: 2, lg: 1 }],
     // [TileExposition, { xs: 1, sm: 2, lg: 3 }],
-    // [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
+    [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
     [TileWhat, { xs: 1, sm: 2, lg: 2 }],
     [TileStrayCats, { xs: 1 }],
     [TileCastratie, { xs: 1 }],
