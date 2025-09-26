@@ -527,99 +527,98 @@ const BannerWho = (() => {
 //   </Tile>
 // );
 
-// const TileEaster = (
-//   <Tile>
-//     <TileHeader title={"Lekkere paaseieren te koop"} />
-//     <TileContent>
-//       <Box
-//         component="img"
-//         sx={{
-//           width: "100%",
-//           height: "auto",
-//         }}
-//         alt="Lekkere paaseieren te koop"
-//         src="/images/paaseieren.jpg"
-//         // src="/images/happy-easter-images-download.jpg"
-//       />
-//       <Typography variant="subtitle1" gutterBottom>
-//         Pasen nadert en er zijn weer lekkere paaseieren te koop t.v.v. de
-//         zwerfkatten. <br></br>
-//         200 gr gevulde choco eitjes fondant, wit en melk praliné voor 5 euro.
-//         <br></br>
-//         Je kan ze afhalen/bestellen bij:
-//         <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
-//           {[
-//             {
-//               name: "Verda",
-//               lnk: LinkVerdaPhoneBtn,
-//             },
-//             {
-//               name: "Monika",
-//               lnk: LinkMonikaPhoneBtn,
-//             },
-//             {
-//               name: "Angelique",
-//               lnk: LinkAngeliquePhoneBtn,
-//             },
-//           ].map((one, index) => (
-//             <ListItem key={index} dense>
-//               <ListItemIcon sx={{ minWidth: 0 }}>
-//                 <ArrowRightIcon />
-//               </ListItemIcon>
-//               {one.name}
-//               {<one.lnk />}
-//             </ListItem>
-//           ))}
-//         </List>
-//         Meerdere zakjes kunnen we wel aan huis brengen. Vanaf aankoop van 15
-//         zakjes is een zakje gratis!
-//         <br></br>
-//         <br></br>
-//         <Typography paragraph variant="body1">
-//           Ieder Euro die we hier aan verdienen zal welbesteed worden, zoals
-//           vorig jaar
-//         </Typography>
-//         {
-//           <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
-//             {[
-//               "rond € 7.000 aan voeding",
-//               "meer dan € 11.000 voor medicatie en behandelingen en operaties",
-//             ].map((one, index) => (
-//               <ListItem key={index} dense>
-//                 <ListItemIcon sx={{ minWidth: 0 }}>
-//                   <ArrowRightIcon />
-//                 </ListItemIcon>
-//                 {one}
-//               </ListItem>
-//             ))}
-//           </List>
-//         }
-//       </Typography>
-//     </TileContent>
-//   </Tile>
-// );
-//
-
-const TileDinnerparty = (
+const TileEaster = (
   <Tile>
-    <TileHeader title={"Eetfestijn op 24/11/2024"} />
+    <TileHeader title={"Lekkere paaseieren te koop"} />
     <TileContent>
-      <Stack direction="column" spacing={5}>
-        <Stack direction="row" spacing={0}>
-          <Box
-            component="img"
-            sx={{
-              width: "100%",
-              height: "auto",
-            }}
-            alt="Eetfestijn van 24/11/2024"
-            src="/images/eetfestijn-2024.jpg"
-          />
-        </Stack>
-      </Stack>
+      <Box
+        component="img"
+        sx={{
+          width: "100%",
+          height: "auto",
+        }}
+        alt="Lekkere paaseieren te koop"
+        src="/images/paaseieren.jpg"
+        // src="/images/happy-easter-images-download.jpg"
+      />
+      <Typography variant="subtitle1" gutterBottom>
+        Pasen nadert en er zijn weer lekkere paaseieren te koop t.v.v. de
+        zwerfkatten. <br></br>
+        200 gr gevulde choco eitjes fondant, wit en melk praliné voor 6 euro.
+        <br></br>
+        Je kan ze afhalen/bestellen bij:
+        <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
+          {[
+            {
+              name: "Verda",
+              lnk: LinkVerdaPhoneBtn,
+            },
+            {
+              name: "Monika",
+              lnk: LinkMonikaPhoneBtn,
+            },
+            {
+              name: "Angelique",
+              lnk: LinkAngeliquePhoneBtn,
+            },
+          ].map((one, index) => (
+            <ListItem key={index} dense>
+              <ListItemIcon sx={{ minWidth: 0 }}>
+                <ArrowRightIcon />
+              </ListItemIcon>
+              {one.name}
+              {<one.lnk />}
+            </ListItem>
+          ))}
+        </List>
+        Meerdere zakjes kunnen we wel aan huis brengen. Vanaf aankoop van 15
+        zakjes is een zakje gratis!
+        <br></br>
+        <br></br>
+        <Typography paragraph variant="body1">
+          Ieder Euro die we hier aan verdienen zal welbesteed worden, zoals
+          vorig jaar
+        </Typography>
+        {
+          <List dense sx={{ pl: 0, pb: 0, pt: 0 }}>
+            {[
+              "rond € 7.000 aan voeding",
+              "meer dan € 11.000 voor medicatie, behandelingen en operaties",
+            ].map((one, index) => (
+              <ListItem key={index} dense>
+                <ListItemIcon sx={{ minWidth: 0 }}>
+                  <ArrowRightIcon />
+                </ListItemIcon>
+                {one}
+              </ListItem>
+            ))}
+          </List>
+        }
+      </Typography>
     </TileContent>
   </Tile>
 );
+
+// const TileDinnerparty = (
+//   <Tile>
+//     <TileHeader title={"Eetfestijn op 24/11/2024"} />
+//     <TileContent>
+//       <Stack direction="column" spacing={5}>
+//         <Stack direction="row" spacing={0}>
+//           <Box
+//             component="img"
+//             sx={{
+//               width: "100%",
+//               height: "auto",
+//             }}
+//             alt="Eetfestijn van 24/11/2024"
+//             src="/images/eetfestijn-2024.jpg"
+//           />
+//         </Stack>
+//       </Stack>
+//     </TileContent>
+//   </Tile>
+// );
 
 const TileTwentyYears = (() => {
   const docUrl = "/twenty-years-page";
@@ -799,6 +798,21 @@ const TileCatsIntroduction = (() => {
   );
 })();
 
+const TileAnimalShelter = (() => {
+  return (
+    <Tile>
+      <TileHeader title={"Animal Shelter"} />
+      <TileContent>
+        <iframe
+          src="https://www.adopteereendier.be/dierenasielen/operatie-zwerfkat-vzw/iframe"
+          width="100%"
+          height="600"
+        ></iframe>
+      </TileContent>
+    </Tile>
+  );
+})();
+
 // https://developers.facebook.com/docs/groups-api/guides#getting-group-posts
 
 // const TileUnderContruction = (
@@ -867,11 +881,12 @@ const TileCatsIntroduction = (() => {
 const HomePage = () => {
   const tiles: [JSX.Element, RegularBreakpoints][] = [
     // [TileEaster, { xs: 1, sm: 2, lg: 3 }],
-    [BannerTwentyYears, { xs: 1, sm: 2, lg: 3 }],
+    [TileAnimalShelter, { xs: 1, sm: 2, lg: 3 }],
+    // [BannerTwentyYears, { xs: 1, sm: 2, lg: 3 }],
     [BannerWho, { xs: 1, sm: 2, lg: 3 }],
     // [TileWishes2023, { xs: 1, sm: 2, lg: 1 }],
     // [TileExposition, { xs: 1, sm: 2, lg: 3 }],
-    [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
+    // [TileDinnerparty, { xs: 1, sm: 2, lg: 1 }],
     [TileWhat, { xs: 1, sm: 2, lg: 2 }],
     [TileStrayCats, { xs: 1 }],
     [TileCastratie, { xs: 1 }],
