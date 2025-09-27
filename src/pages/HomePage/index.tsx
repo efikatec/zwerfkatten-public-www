@@ -25,6 +25,7 @@ import {
   TileMedia,
   TileContent,
   TileActions,
+  TileActionsAbsolute,
   Tile,
 } from "./TileCard";
 import ImageGallery from "react-image-gallery";
@@ -799,16 +800,19 @@ const TileCatsIntroduction = (() => {
 })();
 
 const TileAnimalShelter = (() => {
+  const url = "https://www.adopteereendier.be";
+
   return (
     <Tile>
-      <TileHeader title={"Animal Shelter"} />
+      <TileHeader title={"Onze vrienden van Animal Shelter"} />
       <TileContent>
         <iframe
           src="https://www.adopteereendier.be/dierenasielen/operatie-zwerfkat-vzw/iframe"
           width="100%"
-          height="600"
+          height="720"
         ></iframe>
       </TileContent>
+      <TileActionsAbsolute moreInfoUrl={url} />
     </Tile>
   );
 })();

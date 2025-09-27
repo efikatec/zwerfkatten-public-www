@@ -57,7 +57,7 @@ export const DocSecondaryList = ({ items }: { items: JSX.Element[] }) => (
 
 export const Paragraph = ({ sx, children }: PropsWithChildren<IParagraph>) => {
   return (
-    <Typography variant="body1" component="p" sx={{ ...sx }}>
+    <Typography variant="body1" component="div" sx={{ ...sx }}>
       {children}
     </Typography>
   );

@@ -43,6 +43,27 @@ export const TileActions = ({ moreInfoUrl }: { moreInfoUrl: string }) => {
   );
 };
 
+export const TileActionsAbsolute = ({
+  moreInfoUrl,
+}: {
+  moreInfoUrl: string;
+}) => {
+  const navigate = useNavigate();
+
+  return (
+    <CardActions>
+      <Button
+        variant="contained"
+        color="info"
+        size="small"
+        onClick={() => window.open(moreInfoUrl, "_blank")}
+      >
+        Ik wil meer weten
+      </Button>
+    </CardActions>
+  );
+};
+
 export const Tile = ({ children }: PropsWithChildren) => {
   return (
     <Card
