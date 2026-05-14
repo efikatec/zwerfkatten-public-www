@@ -4,6 +4,11 @@ interface Props {
 }
 import '@fontsource/montserrat';
 const {title} = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const active = (href: string) =>
+    (href === '/' ? path === '/' : path === href || path.startsWith(href + '/'))
+        ? 'bg-white/30 font-semibold'
+        : 'hover:bg-white/20';
 ---
 
 <!DOCTYPE html>
@@ -54,14 +59,14 @@ const {title} = Astro.props;
     <nav class="hidden md:block bg-cat-secondary">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex items-center gap-0.5 h-10">
-                <a href="/" class="px-3 py-1.5 text-sm text-white hover:bg-white/20 rounded transition">Home</a>
-                <a href="/onze-missie" class="px-3 py-1.5 text-sm text-white hover:bg-white/20 rounded transition">Missie</a>
-                <a href="/zwerfkatten" class="px-3 py-1.5 text-sm text-white hover:bg-white/20 rounded transition">Zwerfkatten</a>
-                <a href="/adopteren" class="px-3 py-1.5 text-sm text-white hover:bg-white/20 rounded transition">Adopteren</a>
-                <a href="/verplichtingen" class="px-3 py-1.5 text-sm text-white hover:bg-white/20 rounded transition">Verplichtingen</a>
-                <a href="/doneren" class="px-3 py-1.5 text-sm text-white hover:bg-white/20 rounded transition">Doneren</a>
-                <a href="/weetjes" class="px-3 py-1.5 text-sm text-white hover:bg-white/20 rounded transition">Weetjes</a>
-                <a href="/blog" class="px-3 py-1.5 text-sm text-white hover:bg-white/20 rounded transition">Nieuws</a>
+                <a href="/" class={`px-3 py-1.5 text-sm text-white rounded transition ${active('/')}`}>Home</a>
+                <a href="/onze-missie" class={`px-3 py-1.5 text-sm text-white rounded transition ${active('/onze-missie')}`}>Missie</a>
+                <a href="/zwerfkatten" class={`px-3 py-1.5 text-sm text-white rounded transition ${active('/zwerfkatten')}`}>Zwerfkatten</a>
+                <a href="/adopteren" class={`px-3 py-1.5 text-sm text-white rounded transition ${active('/adopteren')}`}>Adopteren</a>
+                <a href="/verplichtingen" class={`px-3 py-1.5 text-sm text-white rounded transition ${active('/verplichtingen')}`}>Verplichtingen</a>
+                <a href="/doneren" class={`px-3 py-1.5 text-sm text-white rounded transition ${active('/doneren')}`}>Doneren</a>
+                <a href="/weetjes" class={`px-3 py-1.5 text-sm text-white rounded transition ${active('/weetjes')}`}>Weetjes</a>
+                <a href="/blog" class={`px-3 py-1.5 text-sm text-white rounded transition ${active('/blog')}`}>Nieuws</a>
             </div>
         </div>
     </nav>
@@ -69,14 +74,14 @@ const {title} = Astro.props;
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-cat-secondary">
         <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col gap-0.5">
-            <a href="/" class="px-3 py-2 text-sm text-white hover:bg-white/20 rounded transition">Home</a>
-            <a href="/onze-missie" class="px-3 py-2 text-sm text-white hover:bg-white/20 rounded transition">Onze missie</a>
-            <a href="/zwerfkatten" class="px-3 py-2 text-sm text-white hover:bg-white/20 rounded transition">Zwerfkatten</a>
-            <a href="/adopteren" class="px-3 py-2 text-sm text-white hover:bg-white/20 rounded transition">Adopteren</a>
-            <a href="/verplichtingen" class="px-3 py-2 text-sm text-white hover:bg-white/20 rounded transition">Wettelijke verplichtingen</a>
-            <a href="/doneren" class="px-3 py-2 text-sm text-white hover:bg-white/20 rounded transition">Doneren</a>
-            <a href="/weetjes" class="px-3 py-2 text-sm text-white hover:bg-white/20 rounded transition">Weetjes</a>
-            <a href="/blog" class="px-3 py-2 text-sm text-white hover:bg-white/20 rounded transition">Purrrfect nieuws</a>
+            <a href="/" class={`px-3 py-2 text-sm text-white rounded transition ${active('/')}`}>Home</a>
+            <a href="/onze-missie" class={`px-3 py-2 text-sm text-white rounded transition ${active('/onze-missie')}`}>Onze missie</a>
+            <a href="/zwerfkatten" class={`px-3 py-2 text-sm text-white rounded transition ${active('/zwerfkatten')}`}>Zwerfkatten</a>
+            <a href="/adopteren" class={`px-3 py-2 text-sm text-white rounded transition ${active('/adopteren')}`}>Adopteren</a>
+            <a href="/verplichtingen" class={`px-3 py-2 text-sm text-white rounded transition ${active('/verplichtingen')}`}>Wettelijke verplichtingen</a>
+            <a href="/doneren" class={`px-3 py-2 text-sm text-white rounded transition ${active('/doneren')}`}>Doneren</a>
+            <a href="/weetjes" class={`px-3 py-2 text-sm text-white rounded transition ${active('/weetjes')}`}>Weetjes</a>
+            <a href="/blog" class={`px-3 py-2 text-sm text-white rounded transition ${active('/blog')}`}>Purrrfect nieuws</a>
             <a href="/contact"
                class="mt-1 mb-1 px-4 py-2 text-sm bg-cat-primary text-white rounded hover:brightness-95 transition font-medium text-center">
                 Contacteer ons
