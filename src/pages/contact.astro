@@ -1,0 +1,46 @@
+---
+// src/pages/contact.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact - Operatie Zwerfkat vzw">
+    <div class="container mx-auto px-4 py-8 sm:py-12">
+        <h1 class="text-3xl sm:text-4xl font-bold text-center text-cat-secondary mb-6">Contact</h1>
+
+        <div class="max-w-3xl mx-auto bg-white border border-cat-primary p-6 rounded-lg lg sm:p-8">
+            <p class="text-sm sm:text-base text-gray-700 mb-4">
+                Voor vragen, samenwerkingen of hulp kunt u contact opnemen via e-mail, SMS of WhatsApp. Volg ons ook op Facebook.
+            </p>
+
+            <div class="space-y-4">
+                <div class="p-4 bg-cat-primary/5 border-l-4 border-cat-primary rounded">
+                    <p class="text-sm sm:text-base text-gray-700">
+                        E-mail:
+                        <a href="mailto:bestuur@operatiezwerfkat.be" class="ml-1 text-cat-primary underline">bestuur@operatiezwerfkat.be</a>
+                    </p>
+                </div>
+
+                <div class="p-4 bg-cat-primary/5 border-l-4 border-cat-primary rounded">
+                    <p class="text-sm sm:text-base text-gray-700">
+                        SMS naar Monika:
+                        <a href="sms:+32477270753" class="ml-1 text-cat-primary underline">+32 477 270 753</a>
+                    </p>
+                </div>
+
+                <div class="p-4 bg-cat-primary/5 border-l-4 border-cat-primary rounded">
+                    <p class="text-sm sm:text-base text-gray-700">
+                        WhatsApp met Monika:
+                        <a href="https://wa.me/32477270753" target="_blank" rel="noopener noreferrer" class="ml-1 text-cat-primary underline">Start chat</a>
+                    </p>
+                </div>
+
+                <div class="p-4 bg-cat-primary/5 border-l-4 border-cat-primary rounded">
+                    <p class="text-sm sm:text-base text-gray-700">
+                        Volg Operatie Zwerfkat vzw op Facebook:
+                        <a href="https://www.facebook.com/OperatieZwerfkat" target="_blank" rel="noopener noreferrer" class="ml-1 text-cat-primary underline">Operatie Zwerfkat op Facebook</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

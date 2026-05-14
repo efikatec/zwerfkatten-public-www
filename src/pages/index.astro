@@ -1,0 +1,247 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PhotoSlider from "../components/PhotoSlider.astro";
+import { Image } from 'astro:assets';
+import zwerfkatImg from '../assets/zwerfkat.webp';
+import opvanggezinImg from '../assets/opvanggezin.webp';
+import doneerImg from '../assets/doneer.webp';
+
+const postModules = Object.values(import.meta.glob('../content/blog/*.md', {eager: true})) as any[];
+const latestPosts = postModules
+    .filter(p => p?.frontmatter?.date)
+    .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+---
+
+<Layout title="Home - Zwerfkat">
+
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex flex-col lg:flex-row gap-6">
+            <main class="w-full lg:w-3/4">
+
+                <!-- How You Can Help -->
+                <div class="bg-white">
+                    <div class="container mx-auto px-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+
+                            <div class="bg-white border border-cat-primary rounded-lg overflow-hidden transition transform">
+                                <!-- Image area with overlay and centered primary button -->
+                                <div class="relative h-64">
+                                    <Image src={zwerfkatImg} alt="" aria-hidden="true"
+                                           class="absolute inset-0 w-full h-full object-cover"
+                                           loading="eager" />
+                                    <div class="absolute inset-0 bg-black/35"></div>
+
+                                    <!-- button aligned to the bottom center over the photo -->
+                                    <div class="absolute inset-0 flex items-end justify-center pb-6">
+                                        <a href="/zwerfkatten"
+                                           class="z-10 bg-cat-primary text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:brightness-95 focus:outline-none focus:ring-4 focus:ring-cat-primary/40 transition"
+                                           aria-label="Meer info over zwerfkatten">
+                                            Zwerfkatten vangen
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Text content below the picture -->
+                                <div class="p-8 text-center">
+                                    <p class="text-gray-700">
+                                        Help ons zwerfkatten te vangen zodat we ze kunnen verzorgen en laten
+                                        steriliseren.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="bg-white border border-cat-primary  rounded-lg overflow-hidden transition transform">
+                                <!-- Image area with overlay and centered primary button -->
+                                <div class="relative h-64">
+                                    <Image src={opvanggezinImg} alt="" aria-hidden="true"
+                                           class="absolute inset-0 w-full h-full object-cover"
+                                           loading="eager" />
+                                    <div class="absolute inset-0 bg-black/35"></div>
+
+                                    <!-- button aligned to the bottom center over the photo -->
+                                    <div class="absolute inset-0 flex items-end justify-center pb-6">
+                                        <a href="/opvang-gezinnen"
+                                           class="z-10 bg-cat-primary text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:brightness-95 focus:outline-none focus:ring-4 focus:ring-cat-primary/40 transition"
+                                           aria-label="Meer info over zwerfkatten">
+                                            Word opvanggezin
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Text content below the picture -->
+                                <div class="p-8 text-center">
+                                    <p class="text-gray-700">
+                                        Als opvanggezin maak je kittens en socialiseerbare zwerfkatten klaar voor
+                                        adoptie.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-cat-primary  rounded-lg overflow-hidden transition transform">
+                                <!-- Image area with overlay and centered primary button -->
+                                <div class="relative h-64">
+                                    <Image src={doneerImg} alt="" aria-hidden="true"
+                                           class="absolute inset-0 w-full h-full object-cover"
+                                           loading="eager" />
+                                    <div class="absolute inset-0 bg-black/35"></div>
+
+                                    <!-- button aligned to the bottom center over the photo -->
+                                    <div class="absolute inset-0 flex items-end justify-center pb-6">
+                                        <a href="/doneren"
+                                           class="z-10 bg-cat-primary text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:brightness-95 focus:outline-none focus:ring-4 focus:ring-cat-primary/40 transition"
+                                           aria-label="Meer info over zwerfkatten">
+                                            Doneer
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Text content below the picture -->
+                                <div class="p-8 text-center">
+                                    <p class="text-gray-700">
+                                        Kan je niet fysiek helpen met opvangen of vangen van zwerfkatten dan kan je ook
+                                        doneren
+                                    <p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white py-12 sm:py-16">
+
+                    <div class="container mx-auto px-4">
+                        <h4 class="text-lg font-semibold text-cat-secondary mb-3 text-center">Sfeerbeelden</h4>
+                        <PhotoSlider/>
+                    </div>
+                </div>
+
+            </main>
+
+            <aside class="w-full lg:w-1/4 rounded-lg space-y-6">
+
+                {latestPosts && latestPosts.length ? (
+                        <section class="bg-white border border-cat-primary p-6 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cat-secondary mb-3">Purrrfect nieuws</h4>
+
+                            <div class="space-y-4">
+                                {latestPosts.slice(0, 2).map((post) => (
+                                        <article class="space-y-2">
+                                            <a
+                                                    href={post.url ?? `/blog/${post.frontmatter?.slug ?? ''}`}
+                                                    class="block text-cat-primary font-semibold text-lg hover:underline"
+                                            >
+                                                {post.frontmatter?.title}
+                                            </a>
+
+                                            <div class="text-sm text-gray-500">
+                                                {new Date(post.frontmatter.date).toLocaleDateString()}
+                                            </div>
+
+                                            <p class="text-gray-700 text-sm">
+                                                {post.frontmatter?.description ?? post.excerpt ?? ''}
+                                            </p>
+
+                                            <a
+                                                    href={post.url ?? `/blog/${post.frontmatter?.slug ?? ''}`}
+                                                    class="inline-block mt-2 text-cat-primary font-medium"
+                                            >
+                                                Lees meer →
+                                            </a>
+                                        </article>
+                                ))}
+                            </div>
+                        </section>
+                ) : null}
+
+                <section class="bg-white border border-cat-primary p-6 rounded-lg shadow">
+
+                    <h3 class="text-xl text-cat-secondary mb-2">Onze Missie</h3>
+
+                    <!-- Mission content: clamp height on homepage and show fade + Lees meer link -->
+                    <div class="relative">
+                        <div class="mission-content max-h-64 overflow-hidden">
+                            <p class="text-gray-700 mb-2">
+                                VZW Operatie Zwerfkat is reeds meer dan 20 jaar actief binnen Oudenaarde (en in
+                                omstreken). De VZW bestaat uit een handvol vrijwilligers die zich ten volle inzetten
+                                om zwerfkatten te vangen, op te vangen en hen een beter leven te geven.
+                            </p>
+
+                            <p class="text-gray-700">
+                                De maatschappelijke impact van een vzw zoals VZW Operatie Zwerfkat wordt dikwijls
+                                onderschat. Het leven van een zwerfkat kan allesbehalve geromantiseerd worden. De
+                                leefomstandigheden op straat zijn niet rooskleurig. Zwerfkatten moeten zelf op zoek naar
+                                voeding die ze vaak onvoldoende vinden, ze staan bloot aan alle weersomstandigheden en
+                                zijn vatbaarder voor ziektes en parasieten. Daarnaast kunnen ze zorgen voor overlast
+                                waardoor ook buurtbewoners klagen, denk maar aan de nachtelijke gevechten of het
+                                openscheuren van vuilzakken om toch maar een klein brokje eten te vinden.
+                            </p>
+                            <p class="text-gray-700">
+                                Ondanks de wettelijke verplichting om alle eigenaarskatten te chippen en steriliseren,
+                                merken we helaas op dat deze wettelijke verplichtingen niet door iedereen worden
+                                nageleefd. De ‘eigenaar’ kan hiervoor beboet worden.
+                            </p>
+                            <p class="text-gray-700">
+                                VZW Operatie Zwerfkat is desondanks tevreden dat zij over deze 20 jaar heel veel
+                                dierenleed heeft kunnen voorkomen. Een uitdaging waarop al onze vrijwilligers zullen
+                                blijven werken en waarbij we mensen zullen blijven overtuigen op een andere manier om te
+                                gaan met katten. Want zeg nu zelf, wie kan nu niet weerstaan aan het schattig snoetje
+                                van
+                                een klein kittentje of lieve kat?
+                            </p>
+                        </div>
+
+                        <!-- subtle fade to indicate more content -->
+                        <div class="pointer-events-none absolute left-0 right-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+                    </div>
+
+                    <!-- Lees meer link -->
+                    <div class="ml-4">
+                        <a href="/onze-missie" class="text-cat-primary font-medium hover:underline">Lees meer →</a>
+                    </div>
+                    <div class="mt-4 flex gap-1 items-center justify-between">
+                        <div class="flex-1 inline-flex gap-1">
+                            <a href="/animal-shelter"
+                               class="flex-1 text-center bg-cat-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-cat-bg transition shadow">
+                                Beschikbare Katten
+                            </a>
+                            <a href="/contact"
+                               class="flex-1 text-center bg-cat-primary text-white px-4 py-2 rounded-lg font-semibold hover:brightness-95 transition">
+                                Contacteer ons
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <section class="bg-white border border-cat-primary p-6 rounded-lg shadow">
+
+                    <h3 class="text-xl text-cat-secondary mb-2">Wettelijke verplichtingen</h3>
+
+                    <div class="relative">
+                        <div class="mission-content max-h-64 overflow-hidden">
+                            <p class="text-gray-700 mb-2">
+                                Sinds 1 september 2014 moet elke kat die van eigenaar verandert gesteriliseerd zijn, ook
+                                als het dier gratis wordt weggegeven. Sinds 1 april 2018 moet dat gebeuren voor de kat 5
+                                maanden oud is. Sinds 1 januari 2020 moeten ook alle katten geboren tussen 31 augustus
+                                2014 en 1 april 2018 gesteriliseerd zijn, ook als ze niet verkocht of weggegeven worden.
+                                Op <a target="_blank" href="http://www.huisdierinfo.be/zoogdieren/katten">de website van
+                                huisdierinfo</a> vindt u nog meer informatie over de
+                                sterilisatieplicht.</p>
+                        </div>
+
+                        <!-- subtle fade to indicate more content -->
+                        <div class="pointer-events-none absolute left-0 right-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+                    </div>
+
+                    <!-- Lees meer link -->
+                    <div class="ml-4">
+                        <a href="/verplichtingen" class="text-cat-primary font-medium hover:underline">Lees meer →</a>
+                    </div>
+                </section>
+
+
+            </aside>
+        </div>
+    </div>
+
+</Layout>
