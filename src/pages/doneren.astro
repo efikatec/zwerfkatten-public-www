@@ -3,34 +3,29 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Doneren">
-    <div class="container mx-auto px-4 py-8 sm:py-12">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cat-secondary mb-6 sm:mb-8">
-            Doneren
-        </h1>
+    <div class="max-w-4xl mx-auto px-4 py-10 sm:py-16">
+        <h1 class="text-3xl sm:text-4xl font-bold text-cat-primary mb-2">Doneren</h1>
+        <p class="text-gray-400 text-sm mb-8">Elke bijdrage helpt ons zwerfkatten een beter leven te geven.</p>
 
-        <div class="max-w-8xl mx-auto bg-white border border-cat-primary rounded-lg p-4 sm:p-6 md:p-8">
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+            <p class="text-gray-700 mb-5">
+                Kan je niet fysiek helpen met opvangen of vangen van zwerfkatten dan kan je ook donaties overmaken:
+            </p>
+            <ul class="space-y-3 text-gray-700 mb-6">
+                <li class="flex gap-3">
+                    <span class="text-cat-primary mt-1">•</span>
+                    <span><span class="font-medium">Materiële donaties:</span> krabpalen, mandjes, dekentjes, voeding, medicatie,... is allemaal welkom</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-cat-primary mt-1">•</span>
+                    <span><span class="font-medium">Financiële donaties:</span> indien u dit wenst kan u rechtstreeks een geldsom overmaken aan de VZW. Hiermee kunnen we voeding voor de zwervertjes kopen maar hen ook de nodige medische zorgen geven bij de dierenarts.</span>
+                </li>
+            </ul>
 
-            <div class="prose prose-sm sm:prose-lg max-w-none ">
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
-                    Kan je niet fysiek helpen met opvangen of vangen van zwerfkatten dan kan je ook donaties overmaken:
-                </p>
-                <ul class="text-sm sm:text-base text-gray-700 mb-4">
-                    <li>Materiële donaties: krabpalen, mandjes, dekentjes, voeding, medicatie,... is
-                        allemaal welkom
-                    </li>
-                    <li>Financiële donaties: indien u dit wenst kan u rechtstreeks een geldsom
-                        overmaken aan de VZW. Hiermee kunnen we voeding voor de zwervertjes kopen
-                        maar hen ook de nodige medische zorgen geven bij de dierenarts.
-                    </li>
-                </ul>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
-
-                    Operatie Zwerfkat VZW
-                    <br/>
-                    BE27 7370 1184 6773
-                </p>
-
-
+            <div class="p-4 bg-gray-50 border-l-4 border-cat-primary rounded">
+                <p class="text-sm font-medium text-gray-600 mb-1">Rekeningnummer</p>
+                <p class="font-semibold text-gray-900">Operatie Zwerfkat VZW</p>
+                <p class="text-cat-primary font-mono font-medium">BE27 7370 1184 6773</p>
             </div>
         </div>
     </div>

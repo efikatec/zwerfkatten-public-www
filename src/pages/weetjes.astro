@@ -3,77 +3,73 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Weetjes">
-    <div class="container mx-auto px-4 py-8 sm:py-12">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cat-secondary mb-6 sm:mb-8">
-            Weetjes over Katten
-        </h1>
+    <div class="max-w-4xl mx-auto px-4 py-10 sm:py-16">
+        <h1 class="text-3xl sm:text-4xl font-bold text-cat-primary mb-2">Weetjes over Katten</h1>
+        <p class="text-gray-400 text-sm mb-8">Handige informatie over wetgeving, sterilisatie en het introduceren van katten.</p>
 
-        <div class="max-w-8xl mx-auto space-y-6 sm:space-y-8">
-            <!-- Fact 1 -->
-            <div class="bg-white border border-cat-primary p-6 rounded-lg p-6 sm:p-8">
-                <h2 class="text-2xl sm:text-3xl font-bold text-cat-primary mb-3 sm:mb-4">Wetgeving</h2>
+        <div class="space-y-5">
+            <!-- Wetgeving -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+                <h2 class="text-xl font-bold text-cat-primary mb-4">Wetgeving</h2>
 
-                <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4">
+                <p class="text-gray-700 mb-4">
                     Alle katten die verkocht of weggeven worden, moeten vooraf gecastreerd en gechipt worden.
                     Vanaf 1 april 2018 moeten alle katten die geboren zijn na 31/03/2014 gecastreerd en gechipt worden.
                 </p>
 
-                <div class="mt-4 p-4 bg-cat-primary/5 border-l-4 border-cat-primary rounded">
-                    <p class="text-sm sm:text-base text-gray-700">
+                <div class="p-4 bg-gray-50 border-l-4 border-cat-primary rounded">
+                    <p class="text-sm text-gray-700">
                         Meer informatie en contact:
-                        <a href="mailto:dierenwelzijn@vlaanderen.be" class="ml-1 text-cat-primary underline">dierenwelzijn@vlaanderen.be</a>
+                        <a href="mailto:dierenwelzijn@vlaanderen.be" class="text-cat-primary hover:underline">dierenwelzijn@vlaanderen.be</a>
                         — of bezoek
                         <a href="https://www.vlaanderen.be/dierenwelzijn/contact" target="_blank"
-                           rel="noopener noreferrer" class="ml-1 text-cat-primary underline">Vlaanderen: Dierenwelzijn
-                            (contact)</a>.
+                           rel="noopener noreferrer" class="text-cat-primary hover:underline">Vlaanderen: Dierenwelzijn (contact)</a>.
                     </p>
                 </div>
             </div>
 
-            <div class="bg-white border border-cat-primary p-6 rounded-lg p-6 sm:p-8">
-                <h2 class="text-2xl sm:text-3xl font-bold text-cat-primary mb-3 sm:mb-4">Sterilisatie</h2>
+            <!-- Sterilisatie -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+                <h2 class="text-xl font-bold text-cat-primary mb-4">Sterilisatie</h2>
 
-                <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4">
+                <p class="text-gray-700 mb-4">
                     Jaarlijks belanden veel katten in asielen en niet-gecastreerde dieren veroorzaken overtollige
-                    nesten.
-                    Castratie heeft meerdere voordelen:
+                    nesten. Castratie heeft meerdere voordelen:
                 </p>
 
-                <ul class="list-disc list-inside text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 space-y-1">
+                <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1.5">
                     <li>Geen sproeien en minder nachtelijk paringsgedrag.</li>
                     <li>Minder kans op vechtinfecties en overdracht van ziekten.</li>
                     <li>Vermindert het risico op borsttumoren bij vrouwelijke katten.</li>
                     <li>Voorkomt ongewenste nesten die vaak gedumpt worden.</li>
                 </ul>
 
-                <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4">
+                <p class="text-gray-700 mb-4">
                     Lokale organisaties en asielen bieden vaak informatie en hulp bij castratieprojecten. In sommige
                     regio's bestaan er organisaties zoals Operatie Zwerfkat vzw om achtergelaten katten te helpen.
                 </p>
 
-                <p class="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4">
+                <p class="text-gray-700 mb-4">
                     Jaarlijks worden alleen in Oudenaarde en omgeving 150 – 200 katten gemeld voor castratie aan
                     Operatie Zwerfkat vzw door mensen die zich over achtergelaten katten ontfermen.
                 </p>
 
-
-                <div class="mt-4 p-4 bg-cat-primary/5 border-l-4 border-cat-primary rounded">
-                    <p class="text-sm sm:text-base text-gray-700">
+                <div class="p-4 bg-gray-50 border-l-4 border-cat-primary rounded">
+                    <p class="text-sm text-gray-700">
                         Meer informatie en contact:
-                        <a href="mailto:dierenwelzijn@vlaanderen.be" class="ml-1 text-cat-primary underline">dierenwelzijn@vlaanderen.be</a>
+                        <a href="mailto:dierenwelzijn@vlaanderen.be" class="text-cat-primary hover:underline">dierenwelzijn@vlaanderen.be</a>
                         — of bezoek
                         <a href="https://www.vlaanderen.be/dierenwelzijn/contact" target="_blank"
-                           rel="noopener noreferrer" class="ml-1 text-cat-primary underline">Vlaanderen: Dierenwelzijn
-                            (contact)</a>.
+                           rel="noopener noreferrer" class="text-cat-primary hover:underline">Vlaanderen: Dierenwelzijn (contact)</a>.
                     </p>
                 </div>
             </div>
 
+            <!-- Katten introduceren -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+                <h2 class="text-xl font-bold text-cat-primary mb-4">Katten introduceren</h2>
 
-            <div class="bg-white border border-cat-primary p-6 rounded-lg p-6 sm:p-8">
-                <h2 class="text-2xl sm:text-3xl font-bold text-cat-primary mb-3 sm:mb-4">Katten introduceren</h2>
-
-                <div class="text-sm sm:text-base text-gray-700 space-y-3">
+                <div class="text-gray-700 space-y-4">
                     <p>
                         <span class="font-semibold">Eerste kennismaking</span><br/>
                         Als katten elkaar voor de eerste keer zien, werkt hun instinct vaak alsof ze vijanden zijn.
@@ -135,7 +131,6 @@ import Layout from '../layouts/Layout.astro';
                         stresssignalen; zo minimaliseer je de kans op negatieve relaties.
                     </p>
                 </div>
-
             </div>
         </div>
     </div>

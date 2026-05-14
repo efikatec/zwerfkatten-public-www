@@ -3,39 +3,35 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Adopteren">
-    <div class="container mx-auto px-4 py-8 sm:py-12">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cat-secondary mb-6 sm:mb-8">
+    <div class="max-w-4xl mx-auto px-4 py-10 sm:py-16">
+        <h1 class="text-3xl sm:text-4xl font-bold text-cat-primary mb-2">
             Adopteer een Kat
         </h1>
+        <p class="text-gray-400 text-sm mb-8">Een leven redden, een vriend voor het leven krijgen.</p>
 
-        <div class="mt-6 sm:mt-8 flex justify-center mb-4">
+        <div class="mb-6">
             <a href="/animal-shelter"
-               class="inline-flex items-center px-5 py-3 bg-cat-primary text-white font-semibold rounded-lg shadow hover:bg-cat-primary/90 transition">
+               class="inline-flex items-center px-5 py-2.5 bg-cat-primary text-white text-sm font-semibold rounded-md shadow-sm hover:brightness-95 transition">
                 Beschikbare katten
             </a>
         </div>
 
-        <div class="max-w-8xl mx-auto bg-white border border-cat-primary p-6 rounded-lg  p-4 sm:p-6 md:p-8">
-
-
-            <div class="prose prose-sm sm:prose-lg max-w-none ">
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
-
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+            <div class="prose prose-sm sm:prose-base max-w-none">
+                <p class="text-gray-700 mb-4">
                     Overweeg je om een kat te adopteren? Dat is een prachtig besluit! Een kat adopteren betekent een
                     leven redden en een trouwe vriend voor het leven krijgen.
                 </p>
 
-                <h2 class="text-2xl sm:text-3xl font-bold text-cat-primary mt-6 sm:mt-8 mb-3 sm:mb-4">Waarom
-                    adopteren?</h2>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
+                <h2 class="text-xl font-bold text-cat-primary mt-6 mb-3">Waarom adopteren?</h2>
+                <p class="text-gray-700 mb-4">
                     Er zijn talloze katten die op zoek zijn naar een liefdevolle thuis. Door te adopteren geef je een
                     zwerfkat of een kat uit een asiel een tweede kans. Elke kat verdient liefde, zorg en een veilige
                     plek om te leven.
                 </p>
 
-                <h2 class="text-2xl sm:text-3xl font-bold text-cat-primary mt-6 sm:mt-8 mb-3 sm:mb-4">Wat hebben katten
-                    nodig?</h2>
-                <ul class="list-disc list-inside space-y-2 text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
+                <h2 class="text-xl font-bold text-cat-primary mt-6 mb-3">Wat hebben katten nodig?</h2>
+                <ul class="list-disc list-inside space-y-1.5 text-gray-700 mb-4">
                     <li>Een veilige en warme leefomgeving</li>
                     <li>Dagelijks vers water en kwalitatief voedsel</li>
                     <li>Regelmatige dierenartscontroles en vaccinaties</li>
@@ -44,15 +40,15 @@ import Layout from '../layouts/Layout.astro';
                     <li>Speelgoed en krabpalen voor stimulatie</li>
                 </ul>
 
-                <div class="p-4 bg-cat-primary/5 border-l-4 border-cat-primary rounded">
-                    <p class="text-sm sm:text-base text-gray-700">
+                <div class="p-4 bg-gray-50 border-l-4 border-cat-primary rounded">
+                    <p class="text-gray-700 mb-2">
                         Ben je klaar voor adoptie?
                     </p>
-                    <p class="text-sm sm:text-base text-gray-700">
+                    <p class="text-gray-700">
                         Een kat adopteren is een commitment voor 15-20 jaar. Overweeg of je de tijd, middelen en liefde
                         hebt om een kat te verzorgen. Als het antwoord ja is, neem dan contact met ons op of neem een
                         kijkje op onze Facebookpagina of de website van
-                        <a href="https://www.adopteereendier.be/dierenasielen/oost-vlaanderen/operatie-zwerfkat-vzw" target="_blank">adopteer een dier</a>.
+                        <a href="https://www.adopteereendier.be/dierenasielen/oost-vlaanderen/operatie-zwerfkat-vzw" target="_blank" class="text-cat-primary hover:underline">adopteer een dier</a>.
                     </p>
                 </div>
             </div>

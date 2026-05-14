@@ -2,70 +2,57 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-
 <Layout title="Wettelijke verplichtingen">
-    <div class="container mx-auto px-4 py-2">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cat-secondary mb-6 sm:mb-8">
-            Wettelijke verplichtingen
-        </h1>
+    <div class="max-w-4xl mx-auto px-4 py-10 sm:py-16">
+        <h1 class="text-3xl sm:text-4xl font-bold text-cat-primary mb-2">Wettelijke verplichtingen</h1>
+        <p class="text-gray-400 text-sm mb-8">Wat zijn de regels voor kat eigenaren in België?</p>
 
-
-        <div class="flex gap-3 justify-center mb-6">
+        <div class="flex gap-2 mb-6">
             <button type="button" data-target="sterilisatie"
-                    class="px-4 py-2 bg-cat-primary text-white rounded-md hover:opacity-90">
+                    class="px-4 py-2 text-sm bg-cat-primary text-white rounded-md font-medium hover:brightness-95 transition">
                 Sterilisatieplicht
             </button>
             <button type="button" data-target="registratie"
-                    class="px-4 py-2 bg-cat-primary text-white rounded-md hover:opacity-90">
+                    class="px-4 py-2 text-sm bg-cat-primary text-white rounded-md font-medium hover:brightness-95 transition">
                 Identificatie- en registratieplicht
             </button>
         </div>
 
-        <div id="sterilisatie"
-             class="my-2 max-w-8xl mx-auto bg-white border border-cat-primary p-6 rounded-lg sm:p-6 md:p-8">
-            <div class="prose prose-sm sm:prose-lg max-w-none">
-                <h2 class="text-2xl sm:text-3xl font-bold text-cat-primary mt-6 sm:mt-8 mb-3 sm:mb-4">
-                    Sterilisatieplicht
-                </h2>
+        <div id="sterilisatie" class="mb-4 bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+            <div class="prose prose-sm sm:prose-base max-w-none">
+                <h2 class="text-xl font-bold text-cat-primary mb-4">Sterilisatieplicht</h2>
 
-                <p> Sinds 1 september 2014 moet elke kat die van eigenaar verandert gesteriliseerd zijn, ook
+                <p class="text-gray-700 mb-4">Sinds 1 september 2014 moet elke kat die van eigenaar verandert gesteriliseerd zijn, ook
                     als het dier gratis wordt weggegeven. Sinds 1 april 2018 moet dat gebeuren voor de kat 5
                     maanden oud is. Sinds 1 januari 2020 moeten ook alle katten geboren tussen 31 augustus
                     2014 en 1 april 2018 gesteriliseerd zijn, ook als ze niet verkocht of weggegeven worden.
-                    Op <a target="_blank"  href="http://www.huisdierinfo.be/zoogdieren/katten">de website van huisdierinfo</a> vindt u
-                    nog meer informatie over de
-                    sterilisatieplicht.</p>
+                    Op <a target="_blank" href="http://www.huisdierinfo.be/zoogdieren/katten" class="text-cat-primary hover:underline">de website van huisdierinfo</a> vindt u
+                    nog meer informatie over de sterilisatieplicht.</p>
 
-                <p>
+                <p class="text-gray-700">
                     Volg onderstaand schema om te kijken of de sterilisatieplicht ook voor jouw kat van toepassing is:
-                    <img src="/sterilisatie.png" alt="Sterilisatie plicht"/>
+                    <img src="/sterilisatie.png" alt="Sterilisatie plicht" class="mt-4 rounded"/>
                 </p>
-
             </div>
         </div>
-        <div id="registratie"
-             class="my-2 max-w-8xl mx-auto bg-white border border-cat-primary p-6 rounded-lg sm:p-6 md:p-8">
-            <div class="prose prose-sm sm:prose-lg max-w-none">
-                <h2 class="text-2xl sm:text-3xl font-bold text-cat-primary mt-6 sm:mt-8 mb-3 sm:mb-4">
-                    Identificatie- en registratieplicht
-                </h2>
-                <p>
+
+        <div id="registratie" class="mb-4 bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+            <div class="prose prose-sm sm:prose-base max-w-none">
+                <h2 class="text-xl font-bold text-cat-primary mb-4">Identificatie- en registratieplicht</h2>
+                <p class="text-gray-700 mb-4">
                     Sinds 1/11/2017 moet elke kat gechipt (geïdentificeerd) en geregistreerd zijn in de centrale
                     databank CatID voor de leeftijd van 12 weken. Hun gegevens en die van hun baasje dragen ze met zich
                     mee op een microchip. Voordien was dat in een private databank, meestal ID-Chips. Daardoor kunnen
                     gechipte katten die verloren liepen snel herenigd worden met hun baasje. Op <a
-                        target="_blank"  href="http://www.huisdierinfo.be/zoogdieren/katten">de website van huisdierinfo</a> vindt u
+                        target="_blank" href="http://www.huisdierinfo.be/zoogdieren/katten" class="text-cat-primary hover:underline">de website van huisdierinfo</a> vindt u
                     nog meer informatie over de identificatie- en registratieplicht.
-
                 </p>
 
-
-                <p>
+                <p class="text-gray-700">
                     Volg onderstaand schema om na te gaan of jouw kat gechipt en geregistreerd moet worden:
-                    <img src="/registratie.png" alt="Registratie plicht"/>
+                    <img src="/registratie.png" alt="Registratie plicht" class="mt-4 rounded"/>
                 </p>
             </div>
         </div>
     </div>
 </Layout>
-

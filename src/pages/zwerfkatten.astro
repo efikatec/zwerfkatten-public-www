@@ -3,86 +3,57 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Zwerfkatten">
-    <div class="container mx-auto px-4 py-2">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cat-secondary mb-6 sm:mb-8">
-            Zwerfkatten
-        </h1>
+    <div class="max-w-4xl mx-auto px-4 py-10 sm:py-16">
+        <h1 class="text-3xl sm:text-4xl font-bold text-cat-primary mb-2">Zwerfkatten</h1>
+        <p class="text-gray-400 text-sm mb-8">Informatie over zwerfkatten in uw tuin en hoe u kunt helpen.</p>
 
-
-        <div class="flex gap-3 justify-center mb-6">
+        <div class="flex gap-2 mb-6">
             <button type="button" data-target="tuin"
-                    class="px-4 py-2 bg-cat-primary text-white rounded-md hover:opacity-90">
+                    class="px-4 py-2 text-sm bg-cat-primary text-white rounded-md font-medium hover:brightness-95 transition">
                 Zwerfkatten in uw tuin
             </button>
             <button type="button" data-target="vang"
-                    class="px-4 py-2 bg-cat-primary text-white rounded-md hover:opacity-90">
+                    class="px-4 py-2 text-sm bg-cat-primary text-white rounded-md font-medium hover:brightness-95 transition">
                 Zwerfkatten vangen
             </button>
-
         </div>
 
-        <div id="tuin" class="my-2  max-w-8xl mx-auto bg-white border border-cat-primary p-6 rounded-lg sm:p-6 md:p-8">
-            <div class="prose prose-sm sm:prose-lg max-w-none">
-                <h2 class="text-2xl sm:text-3xl font-bold text-cat-primary mt-6 sm:mt-8 mb-3 sm:mb-4">
-                    Zwerfkatten in uw tuin
-                </h2>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
+        <div id="tuin" class="mb-4 bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+            <div class="prose prose-sm sm:prose-base max-w-none">
+                <h2 class="text-xl font-bold text-cat-primary mb-4">Zwerfkatten in uw tuin</h2>
+                <p class="text-gray-700 mb-4">
                     Als vrijwilligers van Operatie Zwerfkat vzw (sinds 2004) is ons eerste doel zwerfkatten
-                    onvruchtbaar te maken zodat er geen ongewenste nesten ontstaan. Verwilderde bange
-                    zwerfkatten
-                    worden na castratie op de oorspronkelijke plaats teruggezet, tenzij opvang elders (manege,
-                    oude
-                    boerderij, ...) mogelijk is. Kittens en tamme katten worden gesocialiseerd in opvanggezinnen
-                    en
+                    onvruchtbaar te maken zodat er geen ongewenste nesten ontstaan. Verwilderde bange zwerfkatten
+                    worden na castratie op de oorspronkelijke plaats teruggezet, tenzij opvang elders (manege, oude
+                    boerderij, ...) mogelijk is. Kittens en tamme katten worden gesocialiseerd in opvanggezinnen en
                     aangeboden voor adoptie.
                 </p>
-                <h2 class="text-xl sm:text-2xl font-bold text-cat-primary mt-6 sm:mt-8 mb-3 sm:mb-4">Effecten
-                    van
-                    castratie</h2>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
-
-                    Na onze tussenkomst: gecastreerde katers en kattinnen worden rustiger omdat de hormonen om
-                    te
-                    paren en te vechten verdwijnen, samen met de straffe geur van urine. Dit kan enkele weken
-                    duren
+                <h3 class="text-lg font-bold text-cat-primary mt-5 mb-3">Effecten van castratie</h3>
+                <p class="text-gray-700 mb-4">
+                    Na onze tussenkomst: gecastreerde katers en kattinnen worden rustiger omdat de hormonen om te
+                    paren en te vechten verdwijnen, samen met de straffe geur van urine. Dit kan enkele weken duren
                     voor volledig merkbaar.
                 </p>
 
-                <h3 class="text-xl sm:text-2xl font-bold text-cat-primary mt-6 sm:mt-8 mb-3 sm:mb-4">Gezondheid
-                    voor
-                    uw
-                    katten</h3>
-
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
-
-
-                    Je eigen katten zijn sowieso gecastreerd en gechipt (ook verplicht volgens de wet sinds
-                    2018).
-                    <br>
-                    Jaarlijkse vaccinatie beschermt hen voor niesziekte, kattenziekte en kattenleukemie
-                    (virussen).
-                    <br>
-                    Ook is regelmatig ontwormen en behandelen tegen ecto-parasieten (vlooien, teken, luizen,
-                    oormijt)
-                    nodig.
+                <h3 class="text-lg font-bold text-cat-primary mt-5 mb-3">Gezondheid voor uw katten</h3>
+                <p class="text-gray-700 mb-2">
+                    Je eigen katten zijn sowieso gecastreerd en gechipt (ook verplicht volgens de wet sinds 2018).<br>
+                    Jaarlijkse vaccinatie beschermt hen voor niesziekte, kattenziekte en kattenleukemie (virussen).<br>
+                    Ook is regelmatig ontwormen en behandelen tegen ecto-parasieten (vlooien, teken, luizen, oormijt) nodig.
                 </p>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
-
-
-                    Voor de zwerfkatten kan je de volgende middelen gebruiken door in het eten te mengen:
-                <ul class="text-sm sm:text-base text-gray-700 mb-4">
+                <p class="text-gray-700 mb-2">Voor de zwerfkatten kan je de volgende middelen gebruiken door in het eten te mengen:</p>
+                <ul class="list-disc list-inside text-gray-700 mb-4 space-y-1">
                     <li>panacur: wormen en giardia</li>
                     <li>milbemax: wormen incluis lintwormen</li>
                     <li>credelio: vlooien en teken</li>
                 </ul>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
-
+                <p class="text-gray-700 mb-4">
                     Om de hongerige zwervertjes buiten huis te houden gebruik je een kattenluik dat je kan
-                    programmeren op de chip van jouw kat, dus geen halsbandje nodig.</p>
+                    programmeren op de chip van jouw kat, dus geen halsbandje nodig.
+                </p>
 
-                <h3 class="text-xl sm:text-2xl font-bold text-cat-primary mt-6 sm:mt-8 mb-3 sm:mb-4">
-                    Verantwoordelijkheid</h3>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
+                <h3 class="text-lg font-bold text-cat-primary mt-5 mb-3">Verantwoordelijkheid</h3>
+                <p class="text-gray-700">
                     Zwerfkat zijn is niet de schuld van de kat zelf, maar van mensen die hun
                     verantwoordelijkheid niet opnemen. Het is strafbaar om dieren aan hun lot over te laten.
                     Sinds 2018 bestaat de verplichting tot castratie, chip en registratie voor eigenaarskatten.
@@ -90,41 +61,35 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </div>
 
-        <div id="vang" class="my-2 max-w-8xl mx-auto bg-white border border-cat-primary p-6 rounded-lg sm:p-6 md:p-8">
-            <div class="prose prose-sm sm:prose-lg max-w-none">
-                <h2 class="text-2xl sm:text-3xl font-bold text-cat-primary mt-6 sm:mt-8 mb-3 sm:mb-4">
-                    Zwerfkatten vangen
-                </h2>
+        <div id="vang" class="mb-4 bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+            <div class="prose prose-sm sm:prose-base max-w-none">
+                <h2 class="text-xl font-bold text-cat-primary mb-4">Zwerfkatten vangen</h2>
 
-
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4">
                     Een van de belangrijkste taken van Operatie Zwerfkat vzw is het vangen van zwerfkatten en naar de
                     dierenarts brengen om steriel te maken.
-
                 </p>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4">
                     Dit loopt niet altijd van een leien dakje aangezien heel wat zwerfkatten schuw zijn. Met een
                     vangkooi als hulpmiddel proberen we deze katten te lokken en te vangen.
                 </p>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4">
                     Indien de zwerfkat zich in jouw tuin bevindt, dan vragen we enige medewerking van de melder om samen
                     de kat te helpen vangen met onze vrijwilligers.
                 </p>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
+                <p class="text-gray-700 mb-4">
                     Het uitvoeren van een zwerfkattenbeleid is een verplichting van elke stad en gemeente. U moet daarom
                     ook bij uw stad/gemeente melden waar er zwerfkatten rondlopen.
-
                 </p>
-                <p class="text-sm sm:text-base text-gray-700 mb-4">
+                <p class="text-gray-700 mb-5">
                     Zwerfkatten binnen de stad Oudenaarde dient u te melden aan de stad zelf via
-                    <a href="https://www.oudenaarde.be/nl/wonen-leven/milieu/dieren/zwerfkatten" target="_blank">de
+                    <a href="https://www.oudenaarde.be/nl/wonen-leven/milieu/dieren/zwerfkatten" target="_blank" class="text-cat-primary hover:underline">de
                         website van Stad Oudenaarde</a>. Uw melding wordt vervolgens naar
                     onze VZW doorgestuurd, waarna wij contact met u opnemen.
                 </p>
 
-
-                <div class="p-4 bg-cat-primary/5 border-l-4 border-cat-primary rounded">
-                    <p class="text-sm sm:text-base text-gray-700">
+                <div class="p-4 bg-gray-50 border-l-4 border-cat-primary rounded">
+                    <p class="text-gray-700 text-sm">
                         Wil je graag helpen vangen? Neem dan contact op via 0477/05.40.63
                     </p>
                 </div>

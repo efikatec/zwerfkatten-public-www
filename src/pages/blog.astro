@@ -13,47 +13,44 @@ const sortedPosts = blogPosts.sort((a, b) => {
 ---
 
 <Layout title="Blog - Zwerfkat">
-  <div class="container mx-auto px-4 py-8 sm:py-12">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cat-secondary mb-6 sm:mb-8">
-      Purrrfect Nieuws
-    </h1>
+  <div class="max-w-4xl mx-auto px-4 py-10 sm:py-16">
+    <h1 class="text-3xl sm:text-4xl font-bold text-cat-primary mb-2">Purrrfect Nieuws</h1>
+    <p class="text-gray-400 text-sm mb-8">Het laatste nieuws van Operatie Zwerfkat vzw.</p>
 
-    <div class="max-w-8xl mx-auto space-y-6 sm:space-y-8">
+    <div class="space-y-6">
       {sortedPosts.map((post) => (
-        <article class="bg-white border border-cat-primary rounded-lg p-6 sm:p-8 hover:shadow-xl transition">
-          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-4 gap-2">
-            <span class="text-xs sm:text-sm text-gray-500">
+        <article class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8 hover:shadow-md transition">
+          <div class="flex items-center justify-between mb-4 gap-2">
+            <span class="text-xs text-gray-400">
               {new Date(post.frontmatter.date).toLocaleDateString('nl-NL', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
               })}
             </span>
-            <span class="text-xs sm:text-sm text-cat-primary font-semibold">
+            <span class="text-xs text-cat-primary font-semibold">
               {post.frontmatter.author}
             </span>
           </div>
           {post.frontmatter.image && (
-              <div class="flex justify-center mb-4">
-                <img
-                    src={post.frontmatter.image}
-                    alt={post.frontmatter.title}
-                    class="w-full max-w-[640px] rounded object-cover"
-                />
-              </div>
+            <div class="flex justify-center mb-5">
+              <img
+                src={post.frontmatter.image}
+                alt={post.frontmatter.title}
+                class="w-full max-w-[640px] rounded-lg object-cover"
+              />
+            </div>
           )}
 
-
-          
-          <h2 class="text-2xl sm:text-3xl font-bold text-cat-secondary mb-3 sm:mb-4">
+          <h2 class="text-2xl font-bold text-gray-900 mb-3">
             {post.frontmatter.title}
           </h2>
-          
-          <p class="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
+
+          <p class="text-gray-600 text-sm mb-5">
             {post.frontmatter.excerpt}
           </p>
-          
-          <div class="prose prose-sm sm:prose-lg max-w-none">
+
+          <div class="prose prose-sm sm:prose-base max-w-none text-gray-700">
             <post.Content />
           </div>
         </article>
@@ -61,8 +58,8 @@ const sortedPosts = blogPosts.sort((a, b) => {
     </div>
 
     {sortedPosts.length === 0 && (
-      <div class="text-center text-gray-500 py-12">
-        <p class="text-lg sm:text-xl">Nog geen blogposts beschikbaar. Kom binnenkort terug!</p>
+      <div class="text-center text-gray-400 py-16">
+        <p class="text-lg">Nog geen blogposts beschikbaar. Kom binnenkort terug!</p>
       </div>
     )}
   </div>

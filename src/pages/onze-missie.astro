@@ -3,24 +3,24 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Onze Missie">
-    <div class="container mx-auto px-4 py-2">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-cat-secondary mb-6 sm:mb-8">
-            Onze Missie
-        </h1>
+    <div class="max-w-4xl mx-auto px-4 py-10 sm:py-16">
+        <h1 class="text-3xl sm:text-4xl font-bold text-cat-primary mb-2">Onze Missie</h1>
+        <p class="text-gray-400 text-sm mb-8">Meer dan 20 jaar zwerfkattenbeleid in Oudenaarde.</p>
 
-        <div class="flex gap-3 justify-center mb-6">
+        <div class="flex gap-3 mb-8">
             <a href="/animal-shelter"
-               class="px-4 py-2 bg-cat-primary text-white rounded-md hover:opacity-90">
+               class="px-4 py-2 text-sm bg-cat-primary text-white rounded-md font-medium hover:brightness-95 transition">
                 Beschikbare Katten
             </a>
             <a href="/contact"
-               class="px-4 py-2 bg-cat-primary text-white rounded-md hover:opacity-90">
+               class="px-4 py-2 text-sm border border-cat-primary text-cat-primary rounded-md font-medium hover:bg-cat-primary hover:text-white transition">
                 Contacteer ons
             </a>
         </div>
-        <div class="max-w-8xl mx-auto bg-white border border-cat-primary p-6 rounded-lg sm:p-6 md:p-8">
-            <div class="prose prose-sm sm:prose-lg max-w-none">
-                <p> VZW Operatie Zwerfkat is reeds meer dan 20 jaar actief binnen Oudenaarde (en in omstreken).
+
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-8">
+            <div class="prose prose-sm sm:prose-base max-w-none text-gray-700 space-y-4">
+                <p>VZW Operatie Zwerfkat is reeds meer dan 20 jaar actief binnen Oudenaarde (en in omstreken).
                     De VZW bestaat uit een handvol vrijwilligers die zich ten volle inzetten om zwerfkatten te
                     vangen, op te vangen en hen een beter leven te geven.
                 </p>
@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
                 <p>
                     Ondanks de wettelijke verplichting om alle eigenaarskatten te chippen en steriliseren,
                     merken we helaas op dat deze wettelijke verplichtingen niet door iedereen worden nageleefd.
-                    De ‘eigenaar’ kan hiervoor beboet worden.
+                    De 'eigenaar' kan hiervoor beboet worden.
                 </p>
 
                 <p>
@@ -48,11 +48,7 @@ import Layout from '../layouts/Layout.astro';
                     zeg nu zelf, wie kan nu niet weerstaan aan het schattig snoetje van een klein kittentje of
                     lieve kat?
                 </p>
-
             </div>
-
-
         </div>
     </div>
 </Layout>
-
