@@ -5,11 +5,15 @@ import { Image } from 'astro:assets';
 import zwerfkatImg from '../assets/zwerfkat.webp';
 import opvanggezinImg from '../assets/opvanggezin.webp';
 import doneerImg from '../assets/doneer.webp';
+import povLogo from '../assets/pov-logo-rgb.svg';
 
 const postModules = Object.values(import.meta.glob('../content/blog/*.md', {eager: true})) as any[];
 const latestPosts = postModules
     .filter(p => p?.frontmatter?.date)
     .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+
+const now = new Date();
+const TWO_WEEKS_MS = 14 * 24 * 60 * 60 * 1000;
 ---
 
 <Layout title="Home - Zwerfkat">
@@ -98,14 +102,23 @@ const latestPosts = postModules
                     <section class="bg-white border border-gray-200 rounded-lg shadow-sm p-5">
                         <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">Purrrfect nieuws</h4>
                         <div class="space-y-5">
-                            {latestPosts.slice(0, 2).map((post) => (
+                            {latestPosts.slice(0, 2).map((post) => {
+                                const isNew = (now.getTime() - new Date(post.frontmatter.date).getTime()) < TWO_WEEKS_MS;
+                                return (
                                 <article class="space-y-1">
-                                    <a
-                                        href={post.url ?? `/blog/${post.frontmatter?.slug ?? ''}`}
-                                        class="block text-cat-primary font-semibold text-sm hover:underline leading-snug"
-                                    >
-                                        {post.frontmatter?.title}
-                                    </a>
+                                    <div class="flex items-start gap-2">
+                                        <a
+                                            href={post.url ?? `/blog/${post.frontmatter?.slug ?? ''}`}
+                                            class="block text-cat-primary font-semibold text-sm hover:underline leading-snug"
+                                        >
+                                            {post.frontmatter?.title}
+                                        </a>
+                                        {isNew && (
+                                            <span class="shrink-0 mt-0.5 text-[10px] font-bold uppercase tracking-wide bg-green-500 text-white px-1.5 py-0.5 rounded-full">
+                                                Nieuw
+                                            </span>
+                                        )}
+                                    </div>
                                     <div class="text-xs text-gray-400">
                                         {new Date(post.frontmatter.date).toLocaleDateString('nl-NL', {year:'numeric',month:'long',day:'numeric'})}
                                     </div>
@@ -119,7 +132,8 @@ const latestPosts = postModules
                                         Lees meer →
                                     </a>
                                 </article>
-                            ))}
+                                );
+                            })}
                         </div>
                     </section>
                 ) : null}
@@ -151,6 +165,18 @@ const latestPosts = postModules
                            class="text-center text-sm border border-cat-primary text-cat-primary px-4 py-2 rounded-md font-medium hover:bg-cat-primary hover:text-white transition">
                             Contacteer ons
                         </a>
+                    </div>
+                </section>
+
+                <section class="bg-white border border-gray-200 rounded-lg shadow-sm p-5">
+                    <h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Met steun van</h3>
+                    <div class="flex flex-col gap-3">
+                        <img src={povLogo.src} alt="Logo Provincie Oost-Vlaanderen"
+                             class="h-16 w-auto self-start" />
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Onze werking wordt mede mogelijk gemaakt dankzij subsidies van de
+                            provincie Oost-Vlaanderen en de vlaamse overheid.
+                        </p>
                     </div>
                 </section>
 

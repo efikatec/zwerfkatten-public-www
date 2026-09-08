@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 // Get all blog posts
-const blogPosts = await Astro.glob('../content/blog/*.md');
+const blogPosts = Object.values(import.meta.glob('../content/blog/*.md', { eager: true })) as any[];
 
 // Sort by date (newest first)
 const sortedPosts = blogPosts.sort((a, b) => {
